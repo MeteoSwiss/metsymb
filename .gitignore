@@ -1,0 +1,6 @@
+*.aux
+*.sty
+*.glo
+*.dvi
+*.idx
+*.log
