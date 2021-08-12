@@ -18,7 +18,7 @@ It is unlikely that `oktasymb` will be subject to a regular *update-and-release*
 
 3. Run:
         
-        pdftex oktasymb.dtx
+        pdflatex oktasymb.dtx
    and:
     - check that the resulting pdf is correct
     - check the log to make sure the checksum is correct (modify it in `oktasymb.dtx` if warranted).
