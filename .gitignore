@@ -4,3 +4,5 @@
 *.dvi
 *.idx
 *.log
+*.out
+*.toc
