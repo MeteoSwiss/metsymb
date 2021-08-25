@@ -6,3 +6,5 @@
 *.log
 *.out
 *.toc
+*_mwe.pdf
+*.png
