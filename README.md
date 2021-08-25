@@ -1,23 +1,58 @@
-# The oktasymb package
+# The metsymb LateX package
 
-`oktasymb` is a humble LaTeX package that introduces ten symbols for the different okta integer values, used in meteorology to characterize the fraction of the sky covered by clouds.
-
-`oktasymb` relies on the `tikz` LaTeX package to draw the symbols.
+`metsymb` is a humble LaTeX package that introduces new meteorological symbols. At the core of the package lies the `metsymb` *font*, in which the different symbols get assigned to specific glyphs, that can then be called via dedicated LaTeX commands.
 
 ## Manual installation
 
-The "source" files of `oktasymb` are comprised of `oktasymb.ins` and `oktasymb.dtx`. To install the package manually, place these files in a location of your choice and run in a terminal:
+Since `metsymb` includes a new font, its manual installation is a bit hairier (:scream:) than regular packages. **The plan is to facilitate an automatic installation via official TeX package managers via the upload of the package to the CTAN repository**. Until that actually happens, or if you are dying to do things by hand, here are some guidelines.
 
-    latex oktasymb.ins
+First, let's create the `.sty` file from the package files. Run `latex metsymb.ins`.
 
-This will create the file `oktasymb.sty`, which you should move in a directory visible to your TeX installation (or right next to the LaTeX document in which you import the package). 
+The entire package is actually comprised of a series of distinct files:
+ - `metsymb.sfd`: the FontForge save file with all the glyphs. Useful only for dev work.
+ - `metsymb.afm`, `metsymb.enc`, `metsymb.pfb`, `metsymb.tfm`, and `metsymb.otf`: the different font files required by LaTeX.
+ - `umetsymb.fd`, `metsymb.map`, `metsymb.ins`, `metsymb.dtx`, and (your newly created) `metsymb.sty`: the actual LaTeX package files.
+ - `metsymb_mwe.py`, and `metsymb_mwe.mplstyle`: demo files to illustrate the use of `metsymb` with `matpolotlib`.
 
-To produce the `.pdf` of the documentation, run:
+To install the package and associated font, many of these files will need to be placed under specific locations within your TeX-tree, which I shall call `tex_loc` for simplicity.
 
-    pdftex oktasymb.dtx
+In my case (Mac OSX 10.15), `tex_loc = /usr/local/texlive/2020/texmf-dist/`. To find your `tex_loc`, you can try the following command: `kpsewhich --var-value=TEXMFLOCAL`. In case of trouble, the following resources may prove useful:
+ - https://tex.stackexchange.com/questions/88423/manual-font-installation
+ - https://tug.org/fonts/fontinstall.html
+
+Having identified your `tex_loc`, place the following files where they belong in the tree:
+```
+cp metsymb.tfm tex_loc/fonts/tfm/public/metsymb/"
+cp metsymb.afm tex_loc/fonts/afm/public/metsymb/"
+cp metsymb.pfb tex_loc/fonts/type1/public/metsymb/"
+cp metsymb.otf tex_loc/fonts/opentype/public/metsymb/"
+cp umetsymb.fd tex_loc/tex/latex/metsymb/"
+cp metsymb.sty tex_loc/tex/latex/metsymb/"
+cp metsymb.map tex_loc/fonts/map/dvips/metsymb/"
+cp metsymb.enc tex_loc/fonts/enc/dvips/metsymb/"
+```
+
+At this point, we need to tell yout TeX setup about these new files. Run the following commands to do so:
+```
+sudo mktexlsr
+sudo updmap-sys --enable Map metsymb.map
+sudo updmap-sys
+```
+
+And that's it !
+
+You should now be able to compile the `metsymb` documentation via `pdflatex metsymb.dtx`.
+
+You should also be able to run the Python example via `python metsymb_mwe.py`.
+
+If these two commands work, you have successfully installed the `metsymb` package manually, and can now access it in your LateX documents and matplotlib figures. If not ...
+
+## Installation problems, bug reports, and symbol suggestions
+
+For any of these, please use Github Issues at https://github.com/MeteoSwiss/metsymb/issues to get in touch with the package developers.
 
 ## License & Copyright
 
-The `oktasymb` package is released under the terms of the BSD-3-Clause license. The terms of this license are available at https://opensource.org/licenses/BSD-3-Clause, and under the LICENSE file included in the package.
+The `metsymb` package is released under the terms of the BSD-3-Clause license. The terms of this license are available at https://opensource.org/licenses/BSD-3-Clause, and under the LICENSE file included in the package.
 
-The copyright (C) 2021 of `oktasymb` is owned by MeteoSwiss. The contributors to the code are listed in AUTHORS. 
+The copyright (C) 2021 of `metsymb` is owned by MeteoSwiss. The contributors to the code are listed in AUTHORS.
