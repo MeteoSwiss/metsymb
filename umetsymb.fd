@@ -1,0 +1,3 @@
+\ProvidesFile{umetsymb.fd}
+\DeclareFontFamily{U}{metsymb}{}
+\DeclareFontShape{U}{metsymb}{m}{n}{<-> metsymb}{}

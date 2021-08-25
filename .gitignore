@@ -1,3 +1,4 @@
+*.DS_Store
 *.aux
 *.sty
 *.glo
@@ -6,5 +7,4 @@
 *.log
 *.out
 *.toc
-*_mwe.pdf
 *.png

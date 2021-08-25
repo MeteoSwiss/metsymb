@@ -53,7 +53,7 @@ The addition of new symbols (or the modification of existing ones) is a two phas
 
 8. Run the Python mwe with `python metsymb_mwe.py`.
 
-9. Create the font test table with `pdflatex testfont` with the `\sample` and `\bye` commands.
+9. Create the font test table with `pdftex testfont` with the `\sample` and `\bye` commands.
 
 10. Generate the pdf of the documentation with `pdflatex metsymb.dtx`, and check it carefully.
 
