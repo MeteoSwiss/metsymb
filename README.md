@@ -1,16 +1,16 @@
-# The metsymb LateX package
+# The metsymb LaTeX package
 
 `metsymb` is a humble LaTeX package that introduces new meteorological symbols. At the core of the package lies the `metsymb` *font*, in which the different symbols get assigned to specific glyphs, that can then be called via dedicated LaTeX commands.
 
 ## Manual installation
 
-Since `metsymb` includes a new font, its manual installation is a bit hairier (:scream:) than regular packages. **The plan is to facilitate an automatic installation via official TeX package managers via the upload of the package to the CTAN repository**. Until that actually happens, or if you are dying to do things by hand, here are some guidelines.
+Since `metsymb` includes a new font, its manual installation is a bit hairier (:scream:) than regular packages. **The plan is to facilitate an automatic installation with official TeX package managers via the upload of the package to the CTAN repository**. Until that actually happens, or if you are dying to do things by hand, here are some guidelines.
 
 First, let's create the `.sty` file from the package files. Run `latex metsymb.ins`.
 
 The entire package is actually comprised of a series of distinct files:
  - `metsymb.sfd`: the FontForge save file with all the glyphs. Useful only for dev work.
- - `metsymb.afm`, `metsymb.enc`, `metsymb.pfb`, `metsymb.tfm`, and `metsymb.otf`: the different font files required by LaTeX.
+ - `metsymb.afm`, `metsymb.enc`, `metsymb.pfb`, `metsymb.tfm`, and `metsymb.otf`: the different font files required by LaTeX, generated using FontForge.
  - `umetsymb.fd`, `metsymb.map`, `metsymb.ins`, `metsymb.dtx`, and (your newly created) `metsymb.sty`: the actual LaTeX package files.
  - `metsymb_mwe.py`, and `metsymb_mwe.mplstyle`: demo files to illustrate the use of `metsymb` with `matpolotlib`.
 
@@ -22,30 +22,35 @@ In my case (Mac OSX 10.15), `tex_loc = /usr/local/texlive/2020/texmf-dist/`. To 
 
 Having identified your `tex_loc`, place the following files where they belong in the tree:
 ```
-cp metsymb.tfm tex_loc/fonts/tfm/public/metsymb/"
-cp metsymb.afm tex_loc/fonts/afm/public/metsymb/"
-cp metsymb.pfb tex_loc/fonts/type1/public/metsymb/"
-cp metsymb.otf tex_loc/fonts/opentype/public/metsymb/"
-cp umetsymb.fd tex_loc/tex/latex/metsymb/"
-cp metsymb.sty tex_loc/tex/latex/metsymb/"
-cp metsymb.map tex_loc/fonts/map/dvips/metsymb/"
-cp metsymb.enc tex_loc/fonts/enc/dvips/metsymb/"
+cp metsymb.tfm tex_loc/fonts/tfm/public/metsymb/
+cp metsymb.afm tex_loc/fonts/afm/public/metsymb/
+cp metsymb.pfb tex_loc/fonts/type1/public/metsymb/
+cp metsymb.otf tex_loc/fonts/opentype/public/metsymb/
+cp umetsymb.fd tex_loc/tex/latex/metsymb/
+cp metsymb.sty tex_loc/tex/latex/metsymb/
+cp metsymb.map tex_loc/fonts/map/dvips/metsymb/
+cp metsymb.enc tex_loc/fonts/enc/dvips/metsymb/
 ```
 
-At this point, we need to tell yout TeX setup about these new files. Run the following commands to do so:
+At this point, we need to tell TeX about these new files. Run the following commands to do so:
 ```
 sudo mktexlsr
 sudo updmap-sys --enable Map metsymb.map
 sudo updmap-sys
 ```
+:warning: `sudo` is required for under OS X, but not necessairly elsewhere ?
+
+:wave: *(side note)* The bash file `manual_install.sh` can be used to automate these different steps with the command `sh manual_install.sh`. Before you run it blindly, **mind the TeX-tree paths in there, that will most certainly need to be adjusted to your needs !**
 
 And that's it !
 
-You should now be able to compile the `metsymb` documentation via `pdflatex metsymb.dtx`.
+You should now be able to compile the `metsymb` documentation with the command: `pdflatex metsymb.dtx`.
 
-You should also be able to run the Python example via `python metsymb_mwe.py`.
+You should also be able to run the Python example with the command: `python metsymb_mwe.py`.
 
-If these two commands work, you have successfully installed the `metsymb` package manually, and can now access it in your LateX documents and matplotlib figures. If not ...
+If these two commands work, you have successfully installed the `metsymb` package manually, and can now access it in your LateX documents and matplotlib figures. :tada:
+
+If not ...
 
 ## Installation problems, bug reports, and symbol suggestions
 
