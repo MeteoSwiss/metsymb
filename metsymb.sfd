@@ -5,7 +5,7 @@ FamilyName: metsymb
 Weight: Regular
 Copyright: Copyright (c) 2021, MeteoSwiss. Created by F.P.A. Vogt; frederic.vogt@meteoswiss.ch
 UComments: "2021-8-23: Created with FontForge (http://fontforge.org)"
-FontLog: "CONTRIBUTORS:+AAoA-F.P.A. Vogt; frederic.vogt@meteoswiss.ch+AAoACgAA-CHANGELOG:+AAoA-v1.0: First release with okta symbols."
+FontLog: "CONTRIBUTORS:+AAoA-F.P.A. Vogt; frederic.vogt@meteoswiss.ch+AAoACgAA-CHANGELOG:+AAoA-2021-08-26 - v1.0: First release with okta and cloud symbols."
 Version: 001.000
 ItalicAngle: 0
 UnderlinePosition: -100
@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1629714157
-ModificationTime: 1629979777
+ModificationTime: 1629981613
 PfmFamily: 33
 TTFWeight: 400
 TTFWidth: 5
