@@ -38,7 +38,7 @@ sudo mktexlsr
 sudo updmap-sys --enable Map metsymb.map
 sudo updmap-sys
 ```
-:warning: `sudo` is required for under OS X, but not necessairly elsewhere ?
+:warning: `sudo` is required under OS X, but not necessarily elsewhere ?
 
 :wave: *(side note)* The bash file `manual_install.sh` can be used to automate these different steps with the command `sh manual_install.sh`. Before you run it blindly, **mind the TeX-tree paths in there, that will most certainly need to be adjusted to your needs !**
 
