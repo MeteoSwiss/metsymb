@@ -24,30 +24,33 @@ User contributions are welcome and will be examined in details. So are bug repor
    * used and recognized internationally, and
    * typically employed in a professional context.
 
-Here is a non-exhaustive list of symbols that will never be included in `metsymb`: :cloud:, :sun:, :snowflake:, ... :scream: !
+Here is a non-exhaustive list of symbols that will never be included in `metsymb`: :cloud:, :zap:, :cyclone:, :snowflake:, ... :scream: !
 
 
 ## Contributing new symbols
 The addition of new symbols (or the modification of existing ones) is a three phase process:
-    A. Creation/modification of the symbol in a stand-alone, custom, LaTeX document using TikZ syntax
-    B. Export to PDF, conversion to SVG, and inclusion into the metsymb OpenType font via FontForge
-    C. (for new symbols) Creation of  dedicated LaTeX command in the metsymb package.
+
+A. Creation/modification of the symbol in a stand-alone, custom, LaTeX document using TikZ syntax.
+
+B. Inclusion into the metsymb OpenType font via FontForge.
+
+C. Creation of dedicated LaTeX commands in the metsymb package.
 
 The first step is the hardest one, but also the where user contributions are the easiest. Here is a detailed walkthrough of what it entails:
 
-    1. [For a new symbol] Create a file `symbol_name.tex` by copying `tikz_glyphs/dummy/dummy.tex`.
+1. [For a new symbol] Create a file `symbol_name.tex` by copying `tikz_glyphs/dummy/dummy.tex`.
 
-    2. Use TikZ to draw the new symbol. This is the hardest part ! Use custom styles with parcimony. If warranted, new styles should be stored in `ref_styl.tex`, in order to make them available to all other symbols, and ease the maintenance of the package.
+2. Use TikZ to draw the new symbol. This is the hardest part ! Use custom styles with parcimony. If warranted, new styles should be stored in `ref_styl.tex`, in order to make them available to all other symbols, and ease the maintenance of the package.
 
-    3. Compile `symbol_name.tex` using:
+3. Compile `symbol_name.tex` using:
 
-        pdflatex symbol_name.tex
+    pdflatex symbol_name.tex
 
-    4. Convert the resulting PDF to SVG via:
+4. Convert the resulting PDF to SVG via:
 
-        pdf2svg symbol_name.pdf symbol_name.svg
+    pdf2svg symbol_name.pdf symbol_name.svg
 
-    5. Submit a Pull Request against the develop branch of the repo, and wait for the `metsymb` devs to show up.
+5. Submit a Pull Request against the develop branch of the repo, and wait for the `metsymb` devs to show up.
 
 
 ## Updating the metsymb font
@@ -57,13 +60,13 @@ When a new set of symbols has been assembled, the package maintainers will need 
 
 1. Modify `metsymb.sfd` directly with FontForge.
 
-   :point_right: for a given glyph, import the corresponding SVG file. Ensure to "scale it to fit". The inclusion of a white box in the corresponding `symbol_name.tex` file should ensure the scaling is correct. This white box must then be removed manually in FontForge.
+   * for a given glyph, import the corresponding SVG file. Ensure to "scale it to fit". The inclusion of a white box in the corresponding `symbol_name.tex` file should ensure the scaling is correct. This white box must then be removed manually in FontForge.
 
-   :point_right: update the font version under *Element->Font info->PS Names*.
+   * update the font version under *Element->Font info->PS Names*.
 
-   :point_right: update the log under *Element->Font info->FONTLOG*.
+   * update the log under *Element->Font info->FONTLOG*.
 
-   :point_right: keep the encoding to `TeX Base (8r)` under *Encoding->Reencode*.
+   * keep the encoding to `TeX Base (8r)` under *Encoding->Reencode*.
 
 2. Create the `.tfm`, `.enc`, `.pfb`, `.asm` files by exporting the font via *File->Generate Fonts...->PS Type1 (Binary)* with *Options->Output TFM & ENC*.
 
@@ -71,11 +74,11 @@ When a new set of symbols has been assembled, the package maintainers will need 
 
 4. *(for new symbols)* Modify `metsymb.dtx`:
 
-   :point_right: add new macros under the Implementation section.
+   * add new macros under the Implementation section.
 
-   :point_right: add new tables under the Usage section.
+   * add new tables under the Usage section.
 
-   :point_right: update the abstract.
+   * update the abstract.
 
 5. *Update* the version in `metsymb.dtx` around l.19, and *add* the change around l.72.
 
@@ -111,7 +114,7 @@ When a new set of symbols has been assembled, the package maintainers will need 
 :wave: *(side note)* The bash file `manual_install.sh` can be used to automate steps 5-7 with the command `sh manual_install.sh`. **Mind the TeX-tree paths in there, that will most certainly need to be adjusted to your needs !**
 
 
-## releasing new symbols
+## Releasing new symbols
 
 It is unlikely that `metsymb` will be subject to a regular *release* cycle given its (very) humble nature. As a consequence, the release procedure is --for now at least-- rather manual (:scream:). Here are the steps to follow, should a new release be warranted:
 
