@@ -2,8 +2,30 @@
 
 `metsymb` is a humble LaTeX package that introduces new meteorological symbols. At the core of the package lies the `metsymb` *font*, in which the different symbols get assigned to specific glyphs, that can then be called via dedicated LaTeX commands.
 
-## Manual installation
+## Table of contents
 
+- [License and Copyright](#license-&-copyright)
+- [Installation](#installation)
+- [Troubleshooting and bug reports](#troubleshooting-and-bug-reports)
+- [Suggesting new symbols](#suggesting-new-symbols)
+- [Contributing](#contributing)
+
+
+## License & Copyright
+
+The `metsymb` package is released under the terms of the BSD-3-Clause license. The terms of this license are available at https://opensource.org/licenses/BSD-3-Clause, and in the LICENSE file included in the package.
+
+The copyright (C) 2021-2022 of `metsymb` is owned by MeteoSwiss. The contributors to the code are listed in AUTHORS.
+
+
+## Installation
+
+Depending on your needs, you may want to install metsymb:
+- [as a LaTeX package](#install-metsymb-as-a-latex-package), or
+- [as an OpenType font](#install-metsymb-as-an-opentype-font)
+
+
+### Install metsymb as a LaTeX package
 Since `metsymb` includes a new font, its manual installation is a bit hairier (:scream:) than regular packages. **The plan is to facilitate an automatic installation with official TeX package managers via the upload of the package to the CTAN repository**. Until that actually happens, or if you are dying to do things by hand, here are some guidelines.
 
 First, let's create the `.sty` file from the package files. Run `latex metsymb.ins`.
@@ -50,14 +72,22 @@ You should also be able to run the Python example with the command: `python mets
 
 If these two commands work, you have successfully installed the `metsymb` package manually, and can now access it in your LateX documents and matplotlib figures. :tada:
 
-If not ...
 
-## Installation problems, bug reports, and symbol suggestions
+### Installing metsymb as an OpenType font
 
-For any of these, please use Github Issues at https://github.com/MeteoSwiss/metsymb/issues to get in touch with the package developers.
+WIP
 
-## License & Copyright
 
-The `metsymb` package is released under the terms of the BSD-3-Clause license. The terms of this license are available at https://opensource.org/licenses/BSD-3-Clause, and under the LICENSE file included in the package.
+## Troubleshooting and bug reports
 
-The copyright (C) 2021 of `metsymb` is owned by MeteoSwiss. The contributors to the code are listed in AUTHORS.
+If you encounter any issue when installing or using metsymb, you can check if it has already been reported [here](https://github.com/MeteoSwiss/metsymb/issues?q=is%3Aissue). If not, please create a new [Github Issue](https://github.com/MeteoSwiss/metsymb/issues) to report it and get help.
+
+
+## Suggesting new symbols
+
+If your favorite meteorological symbol is not yet included in metsymb,
+you can suggest its inclusion by creating a new [Github Issue](https://github.com/MeteoSwiss/metsymb/).
+
+## Contributing
+
+If you simply cannot wait to see your favorite symbol included inside metsymb, you should check our [contributing guidelines](#CONTRIBUTING.md).
