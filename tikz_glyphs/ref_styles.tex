@@ -1,0 +1,21 @@
+% Copyright (C) 2022 MeteoSwiss,
+% Originally written by F.P.A. Vogt; frederic.vogt@meteoswiss.ch
+%
+% This file may be distributed and/or modified under the conditions
+% of the BSD-3-Clause License.
+% The terms of this license are available at:
+%
+% https://opensource.org/licenses/BSD-3-Clause
+% 
+% SPDX-License-Identifier: BSD-3-Clause
+%
+% This file contains the reference TikZ styles, that ought to be used by all metsymb symbols to ensure a uniform look.
+% 
+% In other words, TikZ styles should *never* be defined in individual tikzpictures, but here instead, where they can be shared and access by all.
+% Doing so should ease the global modification of styles for all symbols at once.
+%
+
+\tikzstyle{every picture}=[line width=1.4pt, color=black]
+
+% Should a specific subset of symbol ever require some custom style adjustment (which is likely), they can be defined here as follows:
+% \tikzstyle{fancy symbol style}=[line width=2.0pt, color=black, ...]
