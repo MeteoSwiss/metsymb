@@ -1,17 +1,17 @@
-# The metsymb LaTeX package
+# metsymb
 
-`metsymb` is a humble LaTeX package that introduces new meteorological symbols. At the core of the package lies the `metsymb` *font*, in which the different symbols get assigned to specific glyphs, that can then be called via dedicated LaTeX commands.
+`metsymb` is a **LaTeX package** that introduces vectorial definitions of official meteorological symbols used by the scientific community. At the core of the package lies the `metsymb` **OpenType font**, which can be used and installed on its own.
 
 ## Table of contents
 
-- [License and Copyright](#license-&-copyright)
+- [License and Copyright](#license-and-copyright)
 - [Installation](#installation)
 - [Troubleshooting and bug reports](#troubleshooting-and-bug-reports)
 - [Suggesting new symbols](#suggesting-new-symbols)
 - [Contributing](#contributing)
 
 
-## License & Copyright
+## License and Copyright
 
 The `metsymb` package is released under the terms of the BSD-3-Clause license. The terms of this license are available at https://opensource.org/licenses/BSD-3-Clause, and in the LICENSE file included in the package.
 
@@ -90,4 +90,4 @@ you can suggest its inclusion by creating a new [Github Issue](https://github.co
 
 ## Contributing
 
-If you simply cannot wait to see your favorite symbol included inside metsymb, you should check our [contributing guidelines](#CONTRIBUTING.md).
+If you simply cannot wait to see your favorite symbol included inside metsymb, you should check our [contributing guidelines](CONTRIBUTING.md).
