@@ -15,7 +15,14 @@
 % Doing so should ease the global modification of styles for all symbols at once.
 %
 
-\tikzstyle{every picture}=[line width=1.4pt, color=black]
+\tikzstyle{every picture}=[line width=0.05cm, cap=butt, color=black]
 
 % Should a specific subset of symbol ever require some custom style adjustment (which is likely), they can be defined here as follows:
 % \tikzstyle{fancy symbol style}=[line width=2.0pt, color=black, ...]
+
+% Define some useful tikz macros
+
+% Draw an arc from its center (and not the starting point).
+% Adapted from the comment of Tom Bombadil on: https://tex.stackexchange.com/questions/66216
+\def\centerarc[#1](#2)(#3:#4:#5) % [draw options] (center) (initial angle:final angle:radius), e.g.: \centerarc[red,thick](0,0)(5:85:1)
+    { \draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5); }
