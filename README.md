@@ -1,6 +1,11 @@
 # metsymb
 
-`metsymb` is a **LaTeX package** that introduces vectorial definitions of official meteorological symbols used by the scientific community. At the core of the package lies the `metsymb` **OpenType font**, which can be used and installed on its own.
+metsymb is a **LaTeX package** that introduces vectorial definitions of professional meteorological symbols. Individual symbols are first designed using [TikZ](https://www.ctan.org/pkg/pgf). They are then bundled into a dedicated font with [FontForge](https://fontforge.org/en-US/), and eventually tied to dedicted LaTeX commands. The metsymb **OpenType font** is a side-product that can be used on its own.
+
+This README contains information about the metsymb source code and repository.
+
+For the description of the metsymb LateX package, see [this file](https://github.com/MeteoSwiss/metsymb/blob/develop/metsymb/metsymb.pdf).
+
 
 ## Table of contents
 
@@ -13,9 +18,9 @@
 
 ## License and Copyright
 
-The `metsymb` package is released under the terms of the BSD-3-Clause license. The terms of this license are available at https://opensource.org/licenses/BSD-3-Clause, and in the LICENSE file included in the package.
+The metsymb package is released under the terms of the BSD-3-Clause license. The terms of this license are available at https://opensource.org/licenses/BSD-3-Clause, and in the LICENSE file included in the package.
 
-The copyright (C) 2021-2022 of `metsymb` is owned by MeteoSwiss. The contributors to the code are listed in AUTHORS.
+The copyright (C) 2021-2022 of metsymb is owned by MeteoSwiss. The contributors to the code are listed in AUTHORS.
 
 
 ## Installation
@@ -26,7 +31,7 @@ Depending on your needs, you may want to install metsymb:
 
 
 ### Install metsymb as a LaTeX package
-Since `metsymb` includes a new font, its manual installation is a bit hairier (:scream:) than regular packages. **The plan is to facilitate an automatic installation with official TeX package managers via the upload of the package to the CTAN repository**. Until that actually happens, or if you are dying to do things by hand, here are some guidelines.
+Since metsymb includes a new font, its manual installation is a bit hairier (:scream:) than regular packages. **The plan is to facilitate an automatic installation with official TeX package managers via the upload of the package to the CTAN repository**. Until that actually happens, or if you are dying to do things by hand, here are some guidelines.
 
 First, let's create the `.sty` file from the package files. Run `latex metsymb.ins`.
 
@@ -34,7 +39,7 @@ The entire package is actually comprised of a series of distinct files:
  - `metsymb.sfd`: the FontForge save file with all the glyphs. Useful only for dev work.
  - `metsymb.afm`, `metsymb.enc`, `metsymb.pfb`, `metsymb.tfm`, and `metsymb.otf`: the different font files required by LaTeX, generated using FontForge.
  - `umetsymb.fd`, `metsymb.map`, `metsymb.ins`, `metsymb.dtx`, and (your newly created) `metsymb.sty`: the actual LaTeX package files.
- - `metsymb_mwe.py`, and `metsymb_mwe.mplstyle`: demo files to illustrate the use of `metsymb` with `matpolotlib`.
+ - `metsymb_mwe.py`, and `metsymb_mwe.mplstyle`: demo files to illustrate the use of metsymb with `matpolotlib`.
 
 To install the package and associated font, many of these files will need to be placed under specific locations within your TeX-tree, which I shall call `tex_loc` for simplicity.
 
@@ -62,20 +67,21 @@ sudo updmap-sys
 ```
 :warning: `sudo` is required under OS X, but not necessarily elsewhere ?
 
-:wave: *(side note)* The bash file `manual_install.sh` can be used to automate these different steps with the command `sh manual_install.sh`. Before you run it blindly, **mind the TeX-tree paths in there, that will most certainly need to be adjusted to your needs !**
+:wave: The bash file `manual_install.sh` can be used to automate these different steps with the command `sh manual_install.sh`. Before you run it blindly, **mind the TeX-tree paths in there, that will most certainly need to be adjusted to your needs !**
 
 And that's it !
 
-You should now be able to compile the `metsymb` documentation with the command: `pdflatex metsymb.dtx`.
+You should now be able to compile the metsymb documentation with the command: `pdflatex metsymb.dtx`.
 
 You should also be able to run the Python example with the command: `python metsymb_mwe.py`.
 
-If these two commands work, you have successfully installed the `metsymb` package manually, and can now access it in your LateX documents and matplotlib figures. :tada:
+If these two commands work, you have successfully installed the metsymb package manually, and can now access it in your LateX documents and matplotlib figures. :tada:
 
 
 ### Installing metsymb as an OpenType font
 
-WIP
+Deploy the [`metsymb.otf`](https://github.com/MeteoSwiss/metsymb/blob/develop/metsymb/metsymb.otf) file on your system like you would any other OpenType font, and you should
+have access to its symbols in your favorite text editor.
 
 
 ## Troubleshooting and bug reports
