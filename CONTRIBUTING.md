@@ -15,16 +15,16 @@ This project and everyone participating in it is governed by the [metsymb Code o
 
 ## Scope
 
-`metsymb` is being developed inside a dedicated [Github repository](https://github.io/MeteoSwiss/metsymb) under the [MeteoSwiss organization](https://github.io/MeteoSwiss).
+metsymb is being developed inside a dedicated [Github repository](https://github.io/MeteoSwiss/metsymb) under the [MeteoSwiss organization](https://github.io/MeteoSwiss).
 
 User contributions are welcome and will be examined in details. So are bug reports and suggestions for new symbols, which are **best submitted as [Github Issues](https://github.com/MeteoSwiss/metsymb/issues)**.
 
-`metsymb` is meant to ease the access to vectorial definitions of meteorological symbols used by scientists and engineers. In order to be included in `metsymb`, symbols should be:
+metsymb is meant to ease the access to vectorial definitions of meteorological symbols used by scientists and engineers. In order to be included in metsymb, symbols should be:
    * formally defined and/or approved by a renowned scientific authority, such as the World Meteorological Organization,
    * used and recognized internationally, and
    * regularly employed in a professional context.
 
-Here is a non-exhaustive list of symbols that will never be included in `metsymb`: :cloud:, :zap:, :cyclone:, :snowflake:, ... :scream: !
+Here is a non-exhaustive list of symbols that will never be included in metsymb: :cloud:, :zap:, :cyclone:, :snowflake:, ... :scream: !
 
 
 ## Contributing new symbols
@@ -32,23 +32,27 @@ The addition of new symbols (or the modification of existing ones) is a three ph
 
     * Creation/modification of the symbol in a stand-alone, custom, LaTeX document using TikZ syntax.
 
-    *  Inclusion into the metsymb OpenType font via FontForge.
+    * Inclusion into the metsymb OpenType font via FontForge.
 
     * Creation of dedicated LaTeX commands in the metsymb package.
 
 The first step is the hardest one, but also the one where user contributions are the easiest. Here is a detailed walkthrough of what it entails:
 
+0. Fork the metsymb Github repository.
+
 1. [For a new symbol] Create a file `symbol_name.tex` by copying [`tikz_glyphs/blank/blank.tex`](https://github.com/MeteoSwiss/metsymb/tree/master/tikz_glyphs/blank/blank.tex).
 
 2. Use [TikZ commands](https://en.wikipedia.org/wiki/PGF/TikZ) to draw the new symbol. This is the hardest part ! Use custom styles with parsimony. If warranted, new styles should be defined in [`ref_styles.tex`](https://github.com/MeteoSwiss/metsymb/tree/master/tikz_glyphs/ref_styles.tex), in order to make them available to all other symbols, and ease the maintenance of the package.
 
-3. Compile `symbol_name.tex` using:
-
+3. Compile `symbol_name.tex`:
+    ```
     pdflatex symbol_name.tex
+    ```
 
-4. Convert the resulting PDF to SVG via:
-
+4. Convert the resulting PDF to SVG:
+    ```
     pdf2svg symbol_name.pdf symbol_name.svg
+    ```
 
 5. Submit a Pull Request (that should include `symbol_name.tex`, `symbol_name.pdf`, and `symbol_name.svg`) against the develop branch of the repo.
 
@@ -58,7 +62,7 @@ Once a Pull Request is issued, the metsymb devs will be notified automatically.
 
 ## Updating the metsymb font
 
-When a new set of symbols has been assembled, the package maintainers will need to include them in the OpenType `metsymb` font, and tie them to shortcuts in the `metsymb` LaTeX package. Here's a step-by-step walkthrough of these tasks:
+When a new set of symbols has been assembled, the package maintainers will need to include them in the OpenType metsymb font, and tie them to shortcuts in the metsymb LaTeX package. Here's a step-by-step walkthrough of these tasks:
 
 
 1. Modify `metsymb.sfd` directly with FontForge.
@@ -118,7 +122,7 @@ When a new set of symbols has been assembled, the package maintainers will need 
     ```
     pdftex testfont
     ```
-    When prompted for the font name, type `metsymb`, then request a `\sample`, and `\bye`.
+    When prompted for the font name, type metsymb, then request a `\sample`, and `\bye`.
 
 9. Run the Python example via `python metsymb_mwe.py`.
 
@@ -131,7 +135,7 @@ When a new set of symbols has been assembled, the package maintainers will need 
 
 ## Releasing new symbols
 
-It is unlikely that `metsymb` will be subject to a regular release cycle.
+It is unlikely that metsymb will be subject to a regular release cycle.
 As a consequence, the release procedure is --for now at least-- rather manual (:scream:).
 Here are the steps to follow, should a new release be warranted:
 
