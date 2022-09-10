@@ -1,6 +1,6 @@
 % \iffalse meta-comment
 %
-% Copyright (C) 2021 MeteoSwiss, originally written by Frédéric P.A. Vogt
+% Copyright (C) 2021-2022 MeteoSwiss, originally written by Frédéric P.A. Vogt
 %
 % This file may be distributed and/or modified under the
 % conditions of the BSD-3-Clause License.
@@ -16,7 +16,7 @@
 % \iffalse
 %<package>\NeedsTeXFormat{LaTeX2e}[2005/12/01]
 %<package>\ProvidesPackage{metsymb}
-%<package>     [2021/08/26 v1.0 The meteorological symbols package]
+%<package>     [2022/09/10 v1.1 The meteorological symbols package]
 %
 %<*driver>
 \documentclass{ltxdoc}
@@ -27,7 +27,7 @@
 \usepackage{tabularx} % For the tables
 \usepackage{graphicx} % For the demo Python plot
 \usepackage{listings}% For including code
-\lstset{ 
+\lstset{
   basicstyle=\footnotesize,        % the size of the fonts that are used for the code
   frame=single,                          % add a frame around code
   }
@@ -35,7 +35,7 @@
 \hypersetup{
     colorlinks=true,
     linkcolor=red,
-    %filecolor=magenta,      
+    %filecolor=magenta,
     urlcolor=blue,
     %pdftitle={Overleaf Example},
     %pdfpagemode=FullScreen,
@@ -50,7 +50,7 @@
 %</driver>
 % \fi
 %
-% \CheckSum{60}
+% \CheckSum{80}
 %
 % \CharacterTable
 % {Upper-case \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -69,6 +69,7 @@
 % Right brace \} Tilde \~}
 %
 %
+% \changes{v1.1}{2022/09/10}{Changelog moved to https://github.com/MeteoSwiss/metsymb}
 % \changes{v1.0}{2021/08/26}{Initial version, with okta and cloud symbols.}
 %
 % \GetFileInfo{metsymb.sty}
@@ -83,17 +84,17 @@
 % \maketitle
 %
 % \begin{abstract}
-% \noindent This package introduces commands to generate meteorological symbols. As of \today, these include: okta symbols (\zerookta, \oneokta, \twooktas, \ldots), and cloud symbols (\cirrus, \cirrostratus, \nimbostratus, ...). This package effectively introduces a new font in which each symbol is assigned to a glyph, which can then be called individually from \LaTeX\ documents via dedicated new commands.
+% \noindent This package introduces commands to generate professional meteorological symbols with vectorial quality. As of \today, these include: oktas (\zerookta, \oneokta, \twooktas, \ldots), and cloud genera (\cirrus, \cirrostratus, \nimbostratus, ...). This package essentially introduces a new font in which each symbol is assigned to a glyph, which can then be called individually from \LaTeX\ documents via dedicated commands.
 % \end{abstract}
 %
 % \tableofcontents
-% 
+%
 % \section{Introduction}
 %
-% The creation of this package was initially motivated by the fact that, as of August 24, 2021, there were no dedicated Unicode element for all of \href{https://en.wikipedia.org/wiki/Okta}{the okta symbols} and \href{https://cloudatlas.wmo.int/en/abbr-and-symbols-of-clouds-table-genera-species.html}{the cloud genera symbols}. To the best of my knowledge, no \LaTeX\ package provides a uniform set of these symbols either\footnote{If you know of one, please let me know and I shall list it here !}.\\ 
+% The creation of this package was motivated by the fact that in 2021, there were no dedicated Unicode elements for \href{https://en.wikipedia.org/wiki/Okta}{okta} and \href{https://cloudatlas.wmo.int/en/abbr-and-symbols-of-clouds-table-genera-species.html}{cloud genera} symbols. To the best of my knowledge, no \LaTeX\ package provides a uniform set of these symbols either\footnote{If you know of one, please let me know and I shall list it here !}.\\
 %
-% \noindent This humble package is a direct attempt to remedy --in part-- to this sad state of affair. A new font, created using FontForge\footnote{\url{https://fontforge.org/en-US/}}, is used to generate the new symbols, and assign them to individual glyphs. Individual glyphs can then be called individually using dedicated \LaTeX\ commands.
-%
+% \noindent This package is a direct attempt to remedy to this unfortunate state of affair. Individual symbols are designed using TikZ\footnote{\url{https://www.ctan.org/pkg/pgf}}. They are then bundled into a dedicated font with FontForge\footnote{\url{https://fontforge.org/en-US/}}. Individual glyphs of this metsymb font are then tied to dedicted \LaTeX\ commands via this package.
+% \newpage
 % \section{Usage}
 %
 % Using the \textsf{metsymb} package is straightforward. By importing it via a not-so-surprising \texttt{\textbackslash usepackage\{metsymb\}} in the preamble of your documents, you will gain access to the commands listed in Table~\ref{tbl:oktas} and Table~\ref{tbl:clouds}.
@@ -125,32 +126,28 @@
 %\end{table}
 %
 % \subsection{Using \textsf{metsymb} with \textsf{matplotlib}}
-% 
 %
-% $ $\\
-% The assembly of a dedicated font to store the \textsf{metsymb} symbols\footnote{instead of a simpler \texttt{tikz} approach, \href{https://tex.stackexchange.com/questions/610992/creating-new-symbols-with-full-font-metrics-and-vector-quality}{for example}} is directly motivated by the fact that \textsf{matplotlib} \href{https://stackoverflow.com/questions/68769147/tikzpicture-cropped-from-dvi-when-used-in-matplotlib-plt-text}{requires proper font metrics} to include symbols in Python plots.\\
+% \noindent \textsf{metsymb} can be used to include meteorological symbols inside Python plots, provided that the use of a system-wide \LaTeX\ installation is enabled via the setting \texttt{text.usetex} in your rcParams\footnote{\url{https://matplotlib.org/stable/tutorials/text/usetex.html}}. In fact, the assembly of a dedicated vectorial font to store the \textsf{metsymb} symbols\footnote{instead of a simpler TikZ approach, \href{https://tex.stackexchange.com/questions/610992/creating-new-symbols-with-full-font-metrics-and-vector-quality}{for example}} is directly motivated by the fact that \textsf{matplotlib} \href{https://stackoverflow.com/questions/68769147/tikzpicture-cropped-from-dvi-when-used-in-matplotlib-plt-text}{requires proper font metrics} to include symbols in Python plots.\\
 %
-% \noindent Hence, \textsf{metsymb} can be used to include meteorological symbols inside Python plots, provided that the use of a system-wide \LaTeX\ installation is enabled prior to generating the plots. Modifying the \texttt{rcparams} elements is one way to do so, as illustrated in the following minimal working example (stored in \texttt{metsymb\_mwe.py}; see Fig.~\ref{fig:mwe} for the result):
+%\noindent The following minimal working example, stored in \texttt{metsymb\_mwe.py} inside the \textsf{metsymb} Github repository, illustrates how one can couple \textsf{metsymb} and \textsf{matplotlib} (see Fig.~\ref{fig:mwe} for the result):
 %
 % \lstinputlisting[language=Python]{metsymb_mwe.py}
 %
 % \noindent where \texttt{metsymb\_mwe.mplstyle} contains:
-% 
+%
 % \lstinputlisting[language=Python]{metsymb_mwe.mplstyle}
 %
 % \begin{figure}[htb!]
 % \centerline{\includegraphics{metsymb_mwe.pdf}}
 % \caption{Result of the \texttt{metsymb\_mwe.py} demonstration script, illustrating how the \textsf{metsymb} package can be used with \textsf{matplotlib}.}\label{fig:mwe}
 % \end{figure}
-% \begin{center}
-%    \color{red}
-%  \textbf{WARNING !}\\ The use of \texttt{text.latex.preamble} in the \texttt{rcparams} of \textsf{matplotlib} is not an officially supported feature of that package ! Proceed at your own risks ! \end{center}
+%
 %
 % \section{Code development and bug reports}
 % The \textsf{metsymb} package is being developed inside a dedicated Github repository under the MeteoSwiss organization, located at: \url{https://github.com/MeteoSwiss/metsymb}. User contributions are welcome and will be examined in details. So are bug reports and suggestions for new symbols, which are best submitted as \textit{Github Issues} directly on the code's repo at: \url{https://github.com/MeteoSwiss/metsymb/issues}
 %
 % \section{License and copyright}
-% The copyright (2021) of \textsf{metsymb} is owned by MeteoSwiss. The code, originally written by Frédéric P.A. Vogt, is released under the terms of the BSD-3-Clause License, available at \url{https://opensource.org/licenses/BSD-3-Clause}. 
+% The copyright (2021-2022) of \textsf{metsymb} is owned by MeteoSwiss. The code, originally written by Frédéric P.A. Vogt, is released under the terms of the BSD-3-Clause License, available at \url{https://opensource.org/licenses/BSD-3-Clause}.
 %
 % \section{Ackowledgments}
 % The following resources proved immensely useful to assemble the first version of this package:
@@ -185,140 +182,140 @@
 % \begin{macro}{\zerookta}
 % The 0 okta symbol:
 %    \begin{macrocode}
-\newcommand{\zerookta}{{\usefont{U}{metsymb}{m}{n} 0}}%
+\newcommand{\zerookta}{{\usefont{U}{metsymb}{m}{n} \char33 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\oneokta}
 % The 1 okta symbol:
 %    \begin{macrocode}
-\newcommand{\oneokta}{{\usefont{U}{metsymb}{m}{n} 1}}%
+\newcommand{\oneokta}{{\usefont{U}{metsymb}{m}{n} \char34 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\twooktas}
 % The 2 oktas symbol:
 %    \begin{macrocode}
-\newcommand{\twooktas}{{\usefont{U}{metsymb}{m}{n} 2}}%
+\newcommand{\twooktas}{{\usefont{U}{metsymb}{m}{n} \char35 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\threeoktas}
 % The 3 oktas symbol:
 %    \begin{macrocode}
-\newcommand{\threeoktas}{{\usefont{U}{metsymb}{m}{n} 3}}%
+\newcommand{\threeoktas}{{\usefont{U}{metsymb}{m}{n} \char36 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\fouroktas}
 % The 4 oktas symbol:
 %    \begin{macrocode}
-\newcommand{\fouroktas}{{\usefont{U}{metsymb}{m}{n} 4}}%
+\newcommand{\fouroktas}{{\usefont{U}{metsymb}{m}{n} \char37 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\fiveoktas}
 % The 5 oktas symbol:
 %    \begin{macrocode}
-\newcommand{\fiveoktas}{{\usefont{U}{metsymb}{m}{n} 5}}%
+\newcommand{\fiveoktas}{{\usefont{U}{metsymb}{m}{n} \char38 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\sixoktas}
 % The 6 oktas symbol:
 %    \begin{macrocode}
-\newcommand{\sixoktas}{{\usefont{U}{metsymb}{m}{n} 6}}%
+\newcommand{\sixoktas}{{\usefont{U}{metsymb}{m}{n} \char39 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\sevenoktas}
 % The 7 oktas symbol:
 %    \begin{macrocode}
-\newcommand{\sevenoktas}{{\usefont{U}{metsymb}{m}{n} 7}}%
+\newcommand{\sevenoktas}{{\usefont{U}{metsymb}{m}{n} \char40 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\eightoktas}
 % The 8 oktas symbol:
 %    \begin{macrocode}
-\newcommand{\eightoktas}{{\usefont{U}{metsymb}{m}{n} 8}}%
+\newcommand{\eightoktas}{{\usefont{U}{metsymb}{m}{n} \char41 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\nineoktas}
 % The 9 oktas symbol:
 %    \begin{macrocode}
-\newcommand{\nineoktas}{{\usefont{U}{metsymb}{m}{n} 9}}%
+\newcommand{\nineoktas}{{\usefont{U}{metsymb}{m}{n} \char42 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\cirrus}
 % The cirrus symbol:
 %    \begin{macrocode}
-\newcommand{\cirrus}{{\usefont{U}{metsymb}{m}{n} A}}%
+\newcommand{\cirrus}{{\usefont{U}{metsymb}{m}{n} \char43 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\cirrocumulus}
 % The cirrocumulus symbol:
 %    \begin{macrocode}
-\newcommand{\cirrocumulus}{{\usefont{U}{metsymb}{m}{n} B}}%
+\newcommand{\cirrocumulus}{{\usefont{U}{metsymb}{m}{n} \char44 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\cirrostratus}
 % The cirrostratus symbol:
 %    \begin{macrocode}
-\newcommand{\cirrostratus}{{\usefont{U}{metsymb}{m}{n} C}}%
+\newcommand{\cirrostratus}{{\usefont{U}{metsymb}{m}{n} \char45 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\altocumulus}
 % The altocumulus symbol:
 %    \begin{macrocode}
-\newcommand{\altocumulus}{{\usefont{U}{metsymb}{m}{n} D}}%
+\newcommand{\altocumulus}{{\usefont{U}{metsymb}{m}{n} \char46 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\altostratus}
 % The altostratus symbol:
 %    \begin{macrocode}
-\newcommand{\altostratus}{{\usefont{U}{metsymb}{m}{n} E}}%
+\newcommand{\altostratus}{{\usefont{U}{metsymb}{m}{n} \char47 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\nimbostratus}
 % The nimbostratus symbol:
 %    \begin{macrocode}
-\newcommand{\nimbostratus}{{\usefont{U}{metsymb}{m}{n} F}}%
+\newcommand{\nimbostratus}{{\usefont{U}{metsymb}{m}{n} \char48 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\stratocumulus}
 % The stratocumulus symbol:
 %    \begin{macrocode}
-\newcommand{\stratocumulus}{{\usefont{U}{metsymb}{m}{n} G}}%
+\newcommand{\stratocumulus}{{\usefont{U}{metsymb}{m}{n} \char49 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\stratus}
 % The stratus symbol:
 %    \begin{macrocode}
-\newcommand{\stratus}{{\usefont{U}{metsymb}{m}{n} H}}%
+\newcommand{\stratus}{{\usefont{U}{metsymb}{m}{n} \char50 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\cumulus}
 % The cumulus symbol:
 %    \begin{macrocode}
-\newcommand{\cumulus}{{\usefont{U}{metsymb}{m}{n} I}}%
+\newcommand{\cumulus}{{\usefont{U}{metsymb}{m}{n} \char51 }}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\cumulonimbus}
 % The cumulonimbus symbol:
 %    \begin{macrocode}
-\newcommand{\cumulonimbus}{{\usefont{U}{metsymb}{m}{n} J}}%
+\newcommand{\cumulonimbus}{{\usefont{U}{metsymb}{m}{n} \char52 }}%
 %    \end{macrocode}
 % \end{macro}
 %

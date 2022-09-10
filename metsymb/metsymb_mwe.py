@@ -32,4 +32,4 @@ plt.axis('off')
 # Export to different format and display on-screen.
 plt.savefig('metsymb_mwe.pdf')
 plt.savefig('metsymb_mwe.png')
-plt.show()
+#plt.show()

@@ -1,15 +1,15 @@
-#Copyright (C) 2021 MeteoSwiss,
-#originally written by F.P.A. Vogt; frederic.vogt@meteoswiss.ch
+# Copyright (C) 2021-2022 MeteoSwiss,
+# originally written by F.P.A. Vogt; frederic.vogt@meteoswiss.ch
 #
-#This file may be distributed and/or modified under the conditions
-#of the BSD-3-Clause License.
-#The terms of this license are available at:
+# This file may be distributed and/or modified under the conditions
+# of the BSD-3-Clause License.
+# The terms of this license are available at:
 #
-#https://opensource.org/licenses/BSD-3-Clause
+# https://opensource.org/licenses/BSD-3-Clause
 #
-#SPDX-License-Identifier: BSD-3-Clause
+# SPDX-License-Identifier: BSD-3-Clause
 #
-# This (very crude and stupid!) bash file aims at easing the manual installation of metsymb.
+# This (very crude!) bash file aims at easing the manual installation of metsymb.
 #
 # WARNING: mind the TeX-tree locations, which will most certainly need to be adjusted to your own
 # needs, should you be daring enough to use this script.
@@ -18,7 +18,7 @@
 # Generate the '.sty' file
 latex metsymb.ins
 
-# Copy things at the prope location within the TeX tree.
+# Copy things to the proper location within the TeX tree.
 cp "metsymb.tfm" "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/metsymb/"
 cp "metsymb.afm" "/usr/local/texlive/2020/texmf-dist/fonts/afm/public/metsymb/"
 cp "metsymb.pfb" "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/metsymb/"
@@ -33,5 +33,13 @@ sudo mktexlsr
 sudo updmap-sys --enable Map metsymb.map
 sudo updmap-sys
 
-# Compile the docs to make sure it all works. 
+# Create the font table
+pdftex testfont
+
+# Run the Python example
+python metsymb_mwe.py
+
+# Compile the docs to make sure it all works.
 pdflatex metsymb.dtx
+
+echo "\n All done."

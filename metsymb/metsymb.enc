@@ -32,31 +32,31 @@
  /.notdef
  /.notdef
  /.notdef		% 0x20
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
+ /exclam
+ /quotedbl
+ /numbersign
+ /dollar
+ /percent
+ /ampersand
+ /quoteright
+ /parenleft
+ /parenright
+ /asterisk
+ /plus
+ /comma
+ /hyphen
+ /period
+ /slash
  /zero		% 0x30
  /one
  /two
  /three
  /four
- /five
- /six
- /seven
- /eight
- /nine
+ /.notdef
+ /.notdef
+ /.notdef
+ /.notdef
+ /.notdef
  /.notdef
  /.notdef
  /.notdef
@@ -64,16 +64,16 @@
  /.notdef
  /.notdef
  /.notdef		% 0x40
- /A
- /B
- /C
- /D
- /E
- /F
- /G
- /H
- /I
- /J
+ /.notdef
+ /.notdef
+ /.notdef
+ /.notdef
+ /.notdef
+ /.notdef
+ /.notdef
+ /.notdef
+ /.notdef
+ /.notdef
  /.notdef
  /.notdef
  /.notdef
