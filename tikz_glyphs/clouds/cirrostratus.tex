@@ -1,0 +1,57 @@
+% Copyright (C) 2022 MeteoSwiss,
+% Originally written by F.P.A. Vogt; frederic.vogt@meteoswiss.ch
+%
+% This file may be distributed and/or modified under the conditions
+% of the BSD-3-Clause License.
+% The terms of this license are available at:
+%
+% https://opensource.org/licenses/BSD-3-Clause
+% 
+% SPDX-License-Identifier: BSD-3-Clause
+%
+% This file contains the reference TikZ commands to draw the metsymb symbol: CIRROSTRATUS
+%
+% Reference: https://cloudatlas.wmo.int/en/abbr-and-symbols-of-clouds-table-genera-species.html
+%
+% Created 28.08.2022; frederic.vogt@meteoswiss.ch
+
+% Import the least amount of black magic possible
+\documentclass[tikz, border=0cm, crop=true]{standalone}
+\usetikzlibrary{calc}
+
+% Load the default metsymb TikZ styles
+\input{../ref_styles.tex}
+
+% Start the serious stuff
+\begin{document}
+
+% Radius of curvature of the loop
+\def\ra{0.175}
+% Position angle of the central line
+\def\pa{33}
+
+\begin{tikzpicture}
+
+% Clip to the 0-1 area, to ensure correct scaling occurs during the import in FontForge.
+\clip (0,0) rectangle (1,1);
+
+% Uncomment the line below to show the margins that should be kept clear around the symbol
+%\draw [red] (0.025,0.025) rectangle (0.975, 1.25);
+
+% ===== KEEP THE GLYPH COMMANDS BELOW THIS LINE =====
+%
+% --- Guidelines ---
+%
+% Stick to the following rules to attain a metsymb-compatible look:
+% 0) The default line width has a thickness of 0.05
+% 1) The maximum x extent should be: 0.05 - 0.95
+% 2) The maximum y extent should be: 0.1 - 1
+% 3) The glyphs should be centered (vertically) around: y = 0.55
+
+\draw [join=round] (0.9, 0.125) -- (0.075, 0.125) -- ({0.925-\ra+sin(\pa)*\ra}, {0.125 + tan(\pa) * (0.925-0.075-\ra+sin(\pa)*\ra)}) arc (-90+\pa:+115:\ra);
+
+% ===== KEEP THE GLYPH COMMANDS ABOVE THIS LINE =====
+
+% Finish up
+\end{tikzpicture}
+\end{document}

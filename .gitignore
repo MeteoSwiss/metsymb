@@ -8,3 +8,5 @@
 *.out
 *.toc
 *.png
+*.gz
+blank.pdf

@@ -1,0 +1,28 @@
+% Copyright (C) 2022 MeteoSwiss,
+% Originally written by F.P.A. Vogt; frederic.vogt@meteoswiss.ch
+%
+% This file may be distributed and/or modified under the conditions
+% of the BSD-3-Clause License.
+% The terms of this license are available at:
+%
+% https://opensource.org/licenses/BSD-3-Clause
+% 
+% SPDX-License-Identifier: BSD-3-Clause
+%
+% This file contains the reference TikZ styles, that ought to be used by all metsymb symbols to ensure a uniform look.
+% 
+% In other words, TikZ styles should *never* be defined in individual tikzpictures, but here instead, where they can be shared and access by all.
+% Doing so should ease the global modification of styles for all symbols at once.
+%
+
+\tikzstyle{every picture}=[line width=0.05cm, cap=butt, color=black]
+
+% Should a specific subset of symbol ever require some custom style adjustment (which is likely), they can be defined here as follows:
+% \tikzstyle{fancy symbol style}=[line width=2.0pt, color=black, ...]
+
+% Define some useful tikz macros
+
+% Draw an arc from its center (and not the starting point).
+% Adapted from the comment of Tom Bombadil on: https://tex.stackexchange.com/questions/66216
+\def\centerarc[#1](#2)(#3:#4:#5) % [draw options] (center) (initial angle:final angle:radius), e.g.: \centerarc[red,thick](0,0)(5:85:1)
+    { \draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5); }
