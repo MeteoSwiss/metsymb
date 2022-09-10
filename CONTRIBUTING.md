@@ -91,7 +91,7 @@ When a new set of symbols has been assembled, the package maintainers will need 
 
    4.3. For new symbols, update the abstract.
 
-   4.4. Adjust the version in `metsymb.dtx` around l.19, and *add* the change around l.72.
+   4.4. Adjust the version in `metsymb.dtx` around l.19.
 
 5. Run `latex metsymb.ins`.
 
