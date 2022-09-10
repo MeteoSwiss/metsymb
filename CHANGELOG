@@ -1,0 +1,20 @@
+All notable changes to metsymb will be documented in this file.
+
+The format is inspired from [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+
+## [v1.1.0]
+### Added:
+ -[fpavogt, 2022-09-10] Added dedicated (and unique) CHANGELOG.
+### Fixed:
+### Changed:
+ - [fpavogt, 2022-09-10] Moved glyph design from Fontforge to LaTeX/TikZ.
+ - [fpavogt, 2022-09-10] Cleaned-up the documentation.
+### Deprecated:
+### Removed:
+### Security:
+
+## [v1.0.0]
+### Added:
+ - [fpavogt, 2021-08-26] Initial version, with symbols of oktas and cloud genera.
