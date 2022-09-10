@@ -29,11 +29,8 @@ Here is a non-exhaustive list of symbols that will never be included in metsymb:
 
 ## Contributing new symbols
 The addition of new symbols (or the modification of existing ones) is a three phase process:
-
     * Creation/modification of the symbol in a stand-alone, custom, LaTeX document using TikZ syntax.
-
     * Inclusion into the metsymb OpenType font via FontForge.
-
     * Creation of dedicated LaTeX commands in the metsymb package.
 
 The first step is the hardest one, but also the one where user contributions are the easiest. Here is a detailed walkthrough of what it entails:
