@@ -6,7 +6,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [v1.1.0]
 ### Added:
- -[fpavogt, 2022-09-10] Added dedicated (and unique) CHANGELOG.
+ - [fpavogt, 2022-10-07] Added first design of Cl, Cm, Ch cloud symbols.
+ - [fpavogt, 2022-09-10] Added dedicated (and unique) CHANGELOG.
 ### Fixed:
 ### Changed:
  - [fpavogt, 2022-09-10] Moved glyph design from Fontforge to LaTeX/TikZ.

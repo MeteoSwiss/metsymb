@@ -9,11 +9,11 @@
 % 
 % SPDX-License-Identifier: BSD-3-Clause
 %
-% This file contains the reference TikZ commands to draw the metsymb symbol: CIRRUS
+% This file contains the reference TikZ commands to draw the metsymb symbol: cloud CM-5
 %
-% Reference: https://cloudatlas.wmo.int/en/abbr-and-symbols-of-clouds-table-genera-species.html
+% Reference: https://cloudatlas.wmo.int/en/cloud-symbols-corresponding-to-codes-cl-cm-ch.html
 %
-% Created 28.08.2022; frederic.vogt@meteoswiss.ch
+% Created 07.10.2022; frederic.vogt@meteoswiss.ch
 
 % Import the least amount of black magic possible
 \documentclass[tikz, border=0cm, crop=true]{standalone}
@@ -24,6 +24,10 @@
 
 % Start the serious stuff
 \begin{document}
+
+% Position angle of the central line
+\def\pa{33}
+
 \begin{tikzpicture}
 
 % Clip to the 0-1 area, to ensure correct scaling occurs during the import in FontForge.
@@ -42,9 +46,7 @@
 % 2) The maximum y extent should be: 0.1 - 1
 % 3) The glyphs should be centered (vertically) around: y = 0.55
 
-\draw  (0.05, 0.55) -- (0.85, 0.55);
-\draw (0.8, 0.55) arc (-90:+75:0.125);
-\draw (0.8, 0.55) arc (+90:-75:0.125);
+\draw (0.925, 0.35) arc (0:-180:0.2125) arc (0:-180:0.2125) -- (0.95, {0.35 + tan(\pa) * 0.875});
 
 % ===== KEEP THE GLYPH COMMANDS ABOVE THIS LINE =====
 

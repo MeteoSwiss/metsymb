@@ -9,27 +9,21 @@
 % 
 % SPDX-License-Identifier: BSD-3-Clause
 %
-% This file contains the reference TikZ commands to draw the metsymb symbol: CIRROCUMULUS
+% This file contains the reference TikZ commands to draw the metsymb symbol: cloud CL-3
 %
-% Reference: https://cloudatlas.wmo.int/en/abbr-and-symbols-of-clouds-table-genera-species.html
+% Reference: https://cloudatlas.wmo.int/en/cloud-symbols-corresponding-to-codes-cl-cm-ch.html
 %
-% Created 28.08.2022; frederic.vogt@meteoswiss.ch
+% Created 07.10.2022; frederic.vogt@meteoswiss.ch
 
 % Import the least amount of black magic possible
 \documentclass[tikz, border=0cm, crop=true]{standalone}
-\usetikzlibrary{calc, angles}
+\usetikzlibrary{calc}
 
 % Load the default metsymb TikZ styles
 \input{../ref_styles.tex}
 
 % Start the serious stuff
 \begin{document}
-
-% Radius of curvature of the wings
-\def\ra{0.2}
-% Position angle of the central line
-\def\pa{33}
-
 \begin{tikzpicture}
 
 % Clip to the 0-1 area, to ensure correct scaling occurs during the import in FontForge.
@@ -48,8 +42,10 @@
 % 2) The maximum y extent should be: 0.1 - 1
 % 3) The glyphs should be centered (vertically) around: y = 0.55
 
-\draw ({0.075}, {0.55 - tan(\pa)*(0.425-\ra + sin(\pa)*\ra) - cos(\pa)*\ra}) arc (+180:+90+\pa:\ra) -- ({0.925-\ra + sin(\pa)*\ra}, {0.55 + tan(\pa)*( 0.425-\ra + sin(\pa)*\ra)}) arc (-90+\pa:+15:\ra);
-\draw ({0.075}, {0.55 - tan(\pa) * (0.5-0.075-\ra + sin(\pa)*\ra) - cos(\pa) * \ra}) arc (+180:+195:\ra);
+\centerarc[](0.5,0.53)(+200:-20:0.2)
+\draw (0.5, 0.73) -- (0.5, 0.33);
+\draw (0.075, 0.125) -- (0.925, 0.125);
+\draw (0.075, 0.1) arc (+180:0:0.425);
 
 % ===== KEEP THE GLYPH COMMANDS ABOVE THIS LINE =====
 

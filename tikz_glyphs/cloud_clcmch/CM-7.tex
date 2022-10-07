@@ -9,12 +9,11 @@
 % 
 % SPDX-License-Identifier: BSD-3-Clause
 %
-% This file contains the reference TikZ commands to draw the metsymb symbol: BLANK_SYMBOL
+% This file contains the reference TikZ commands to draw the metsymb symbol: cloud CM-7
 %
-% Reference: n/a
+% Reference: https://cloudatlas.wmo.int/en/cloud-symbols-corresponding-to-codes-cl-cm-ch.html
 %
-% Created 28.08.2022; frederic.vogt@meteoswiss.ch
-% Modified 07.10.2022; frederic.vogt@meteoswiss.ch - Corrected the red area to match the y-exclusion guidelines.
+% Created 07.10.2022; frederic.vogt@meteoswiss.ch
 
 % Import the least amount of black magic possible
 \documentclass[tikz, border=0cm, crop=true]{standalone}
@@ -25,15 +24,19 @@
 
 % Start the serious stuff
 \begin{document}
+
+% Position angle of the central line
+\def\pa{33}
+
 \begin{tikzpicture}
 
 % Clip to the 0-1 area, to ensure correct scaling occurs during the import in FontForge.
 \clip (0,0) rectangle (1,1);
 
 % Uncomment the line below to show the margins that should be kept clear around the symbol
-%\draw [red] (0.025,0.025) rectangle (0.975, 1.25) (0,0.075) -- (1,0.075);
+%\draw [red] (0.025,0.025) rectangle (0.975, 1.25);
 
-% ===== INSERT THE GLYPH COMMANDS BELOW THIS LINE =====
+% ===== KEEP THE GLYPH COMMANDS BELOW THIS LINE =====
 %
 % --- Guidelines ---
 %
@@ -43,8 +46,9 @@
 % 2) The maximum y extent should be: 0.1 - 1
 % 3) The glyphs should be centered (vertically) around: y = 0.55
 
+\draw (0.075, 0.35) -- (0.925, 0.35) arc (0:-180:0.2125) arc (0:-180:0.2125) -- (0.95, {0.35 + tan(\pa) * 0.875});
 
-% ===== INSERT THE GLYPH COMMANDS ABOVE THIS LINE =====
+% ===== KEEP THE GLYPH COMMANDS ABOVE THIS LINE =====
 
 % Finish up
 \end{tikzpicture}
