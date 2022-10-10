@@ -4,6 +4,7 @@
 
 - [Code of conduct](#code-of-conduct)
 - [Scope](#essential-things-to-know-about-metsymb)
+- [Package content] (#package-content)
 - [Contributing new symbols](#contributing-new-symbols)
 - [Updating the metsymb font (maintainers)](#updating-the-metsymb-font)
 - [Releasing new symbols (maintainers)](#releasing-new-symbols)
@@ -26,6 +27,30 @@ metsymb is meant to ease the access to vectorial definitions of meteorological s
 
 Here is a non-exhaustive list of symbols that will never be included in metsymb: :cloud:, :zap:, :cyclone:, :snowflake:, ... :scream: !
 
+
+## Package content
+
+What follows is a (brief) description of the more "exotic" files included in the metsymb repo.
+ - `.github`: contains all the Github-related magic, including custom issue templates, custom
+   pull-request templates, and specific Actions for CI/CD purposes.
+
+ - `source/`: contains the actual metsymb TeX package files. These include:
+   * `manual_install.sh`: a crude, basic, absolutely-not-to-be-trusted bash script to automate the manual installation of the metsymb TeX package.
+   * `metsymb.sfd`: the FontForge save file, used to assign glyphs to characters.
+   * `metsymb.afm`, `metsymb.enc`, `metsymb.pfb`, `metsymb.tfm`, and `metsymb.otf`: the different font files required by LaTeX, generated using FontForge.
+   * `umetsymb.fd`, `metsymb.map`, `metsymb.ins`, `metsymb.dtx`: the actual LaTeX package files.
+   * `metsymb_mwe.py`, and `metsymb_mwe.mplstyle`: demo files to illustrate the use of metsymb with `matpolotlib`. With metsymb successfully installed, running `metsymb_mwe.py` will generate
+   `metsymb_mwe.png` and `metsymb_mwe.pdf`.
+   * `metsymb.pdf`: the compiled documentation of the metsymb TeX package.
+   * `testfont.pdf`: the metsymb font table (see below).
+
+ - `tickz_glyphs`: contains all the individual TikZ reference codes for the metsymb glyphs. Each
+   glyph is designed inside a dedited `.tex` file, which gets compiled in a matching `.pdf` file.
+   The latter is then converted manually (see below) in a matching `.svg` file, that is used to load
+   the symbol inside FontForge.
+
+ - `.gitattributes`: fine-tune which files get included in the Github release `.zip`, to ensure these
+   are CTAN-ready.
 
 ## Contributing new symbols
 The addition of new symbols (or the modification of existing ones) is a three phase process:

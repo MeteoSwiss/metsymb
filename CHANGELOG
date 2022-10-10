@@ -7,6 +7,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [v1.2.0]
 ### Added:
  - [fpavogt, 2022-10-07] Added first design of Cl, Cm, Ch cloud symbols.
+ - [fpavogt, 2022-10-07] Prepare the CTAN release (+ .gitattributes, doc cleanup)
 ### Fixed:
 ### Changed:
  - [fpavogt, 2022-10-10] Small modifications of the cloud genera symbols to match the cl-cm-ch design (radius, slope).
