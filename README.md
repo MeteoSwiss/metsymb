@@ -34,10 +34,10 @@ Depending on your needs, you may want to install metsymb:
 Since metsymb includes a new font, its manual installation is a bit hairier (:scream:) than regular packages. **It is thus strongly recommended to use your favorite TeX package
 manager to install metsymb, given that it lives on CTAN**.
 
-Should you be willing to install the package manually nonetheless, here are some guidelines:
+Should you be willing/requireds to install the package manually nonetheless, here are some guidelines:
 
   1. Download the latest metsymb [release](https://github.com/MeteoSwiss/metsymb/releases).
-     If you are interested in the latest changes, you can also clone the metsymb repo directly.
+     If you are interested in the latest changes, you can also clone the [metsymb Github repo](https://github.com/MeteoSwiss/metsymb) directly.
 
   2. Create the TeX `.sty` file:
      ```
@@ -48,21 +48,21 @@ Should you be willing to install the package manually nonetheless, here are some
   3. Many of the package files will need to be placed under specific locations within your TeX-tree,
      which I shall call `tex_loc` for simplicity.
 
-    In my case (Mac OSX 10.15), `tex_loc = /usr/local/texlive/2020/texmf-dist/`. To find your own `tex_loc`, you can try the following command: `kpsewhich --var-value=TEXMFLOCAL`. In case of trouble, the following resources may prove useful:
-    * https://tex.stackexchange.com/questions/88423/manual-font-installation
-    * https://tug.org/fonts/fontinstall.html
+     In my case (Mac OSX 10.15), `tex_loc = /usr/local/texlive/2020/texmf-dist/`. To find your own `tex_loc`, you can try the following command: `kpsewhich --var-value=TEXMFLOCAL`. In case of trouble, the following resources may prove useful:
+       * https://tex.stackexchange.com/questions/88423/manual-font-installation
+       * https://tug.org/fonts/fontinstall.html
 
-    Having identified your `tex_loc`, place the following files where they belong in the tree:
-    ```
-    cp metsymb.tfm tex_loc/fonts/tfm/public/metsymb/
-    cp metsymb.afm tex_loc/fonts/afm/public/metsymb/
-    cp metsymb.pfb tex_loc/fonts/type1/public/metsymb/
-    cp metsymb.otf tex_loc/fonts/opentype/public/metsymb/
-    cp umetsymb.fd tex_loc/tex/latex/metsymb/
-    cp metsymb.sty tex_loc/tex/latex/metsymb/
-    cp metsymb.map tex_loc/fonts/map/dvips/metsymb/
-    cp metsymb.enc tex_loc/fonts/enc/dvips/metsymb/
-    ```
+     Having identified your `tex_loc`, place the following files where they belong in the tree:
+     ```
+     cp metsymb.tfm tex_loc/fonts/tfm/public/metsymb/
+     cp metsymb.afm tex_loc/fonts/afm/public/metsymb/
+     cp metsymb.pfb tex_loc/fonts/type1/public/metsymb/
+     cp metsymb.otf tex_loc/fonts/opentype/public/metsymb/
+     cp umetsymb.fd tex_loc/tex/latex/metsymb/
+     cp metsymb.sty tex_loc/tex/latex/metsymb/
+     cp metsymb.map tex_loc/fonts/map/dvips/metsymb/
+     cp metsymb.enc tex_loc/fonts/enc/dvips/metsymb/
+     ```
 
   4. At this point, we need to tell TeX about these new files. Run the following commands to do so:
      ```
