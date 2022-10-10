@@ -72,7 +72,7 @@ When a new set of symbols has been assembled, the package maintainers will need 
     1.2. Cleanup the glyph via `Element -> Overlap -> Remove Overlap` (after selecting all nodes).
         :warning: If certain elements are "white", their order must first be reversed via `Element -> Reverse Order`.
 
-    1.3. Check the glyph validity via `Elements -> Find Problems ...`. Make sure to tick the box `Paths -> Check missing extrema`.
+    1.3. Check the glyph validity via `Elements -> Find Problems ...`. Make sure to tick the box `Paths -> Intersecting paths & Check missing extrema`.
 
     1.4. Repeat steps 1.1 to 1.3 for each new/updated glyph.
 
@@ -119,7 +119,7 @@ When a new set of symbols has been assembled, the package maintainers will need 
     ```
     pdftex testfont
     ```
-    When prompted for the font name, type metsymb, then request a `\sample`, and `\bye`.
+    When prompted for the font name, type `metsymb`, then request a `\sample`, and `\bye`.
 
 9. Run the Python example via `python metsymb_mwe.py`.
 
