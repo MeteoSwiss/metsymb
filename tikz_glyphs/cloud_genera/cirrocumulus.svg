@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28.346pt" height="28.346pt" viewBox="0 0 28.346 28.346" version="1.1">
-<defs>
-<clipPath id="clip1">
-  <path d="M 0 3 L 23 3 L 23 28.347656 L 0 28.347656 Z M 0 3 "/>
-</clipPath>
-</defs>
 <g id="surface1">
-<path style="fill:none;stroke-width:1.4174;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 2.125 4.68975 C 2.125 6.607719 3.097656 8.400688 4.707031 9.443656 L 23.640625 21.736625 C 25.699219 23.076469 26.664062 25.588188 26.027344 27.959281 " transform="matrix(1,0,0,-1,0,28.346)"/>
-<g clip-path="url(#clip1)" clip-rule="nonzero">
-<path style="fill:none;stroke-width:1.4174;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 2.125 4.68975 C 2.125 4.193656 2.191406 3.701469 2.320312 3.221 " transform="matrix(1,0,0,-1,0,28.346)"/>
-</g>
+<path style="fill:none;stroke-width:1.4174;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 14.171875 15.592094 L 21.601562 20.416313 C 23.242188 21.478813 23.710938 23.674125 22.644531 25.31475 C 21.679688 26.799125 19.773438 27.342094 18.175781 26.596 " transform="matrix(1,0,0,-1,0,28.346)"/>
+<path style="fill:none;stroke-width:1.4174;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 14.171875 15.592094 L 6.746094 10.767875 C 5.105469 9.701469 4.636719 7.506156 5.703125 5.865531 C 6.539062 4.576469 8.109375 3.974906 9.59375 4.373344 " transform="matrix(1,0,0,-1,0,28.346)"/>
 </g>
 </svg>
