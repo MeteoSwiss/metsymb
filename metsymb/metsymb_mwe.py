@@ -25,7 +25,7 @@ plt.style.use('./metsymb_mwe.mplstyle')
 plt.close(1)
 plt.figure(1, figsize=(4, 0.5))
 plt.text(0.5, 0.5,
-         r'\LARGE Hello World: \threeoktas \nimbostratus',
+         r'\LARGE Hello World: \threeoktas \nimbostratus \chIX',
          ha='center')
 plt.axis('off')
 

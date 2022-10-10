@@ -16,7 +16,7 @@
 % \iffalse
 %<package>\NeedsTeXFormat{LaTeX2e}[2005/12/01]
 %<package>\ProvidesPackage{metsymb}
-%<package>     [2022/09/10 v1.1 The meteorological symbols package]
+%<package>     [2022/09/10 v1.2 The meteorological symbols package]
 %
 %<*driver>
 \documentclass{ltxdoc}
@@ -40,6 +40,7 @@
     %pdftitle={Overleaf Example},
     %pdfpagemode=FullScreen,
     }
+\usepackage{amsmath} % For proper mathematical notations
 \usepackage{metsymb}
 \EnableCrossrefs
 \CodelineIndex
@@ -50,7 +51,7 @@
 %</driver>
 % \fi
 %
-% \CheckSum{80}
+% \CheckSum{188}
 %
 % \CharacterTable
 % {Upper-case \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -84,7 +85,7 @@
 % \maketitle
 %
 % \begin{abstract}
-% \noindent This package introduces commands to generate professional meteorological symbols with vectorial quality. As of \today, these include: oktas (\zerookta, \oneokta, \twooktas, \ldots), and cloud genera (\cirrus, \cirrostratus, \nimbostratus, ...). This package essentially introduces a new font in which each symbol is assigned to a glyph, which can then be called individually from \LaTeX\ documents via dedicated commands.
+% \noindent This package introduces commands to generate professional meteorological symbols with vectorial quality. As of \today, these include: oktas (\zerookta, \oneokta, \twooktas, \ldots), cloud genera (\cirrus, \cirrostratus, \nimbostratus, ...), and C$_\text{L}$--C$_\text{M}$--C$_\text{H}$ cloud codes (\clIII, \cmVI, \chIX, \ldots). This package essentially introduces a new font in which each symbol is assigned to a glyph, which can then be called individually from \LaTeX\ documents via dedicated commands.
 % \end{abstract}
 %
 % \tableofcontents
@@ -97,7 +98,7 @@
 % \newpage
 % \section{Usage}
 %
-% Using the \textsf{metsymb} package is straightforward. By importing it via a not-so-surprising \texttt{\textbackslash usepackage\{metsymb\}} in the preamble of your documents, you will gain access to the commands listed in Table~\ref{tbl:oktas} and Table~\ref{tbl:clouds}.
+% Using the \textsf{metsymb} package is straightforward. By importing it via a not-so-surprising \texttt{\textbackslash usepackage\{metsymb\}} in the preamble of your documents, you will gain access to the commands listed in Tables~\ref{tbl:oktas} to \ref{tbl:clcmch}.
 %
 % \begin{table}[htb!]
 % \centering
@@ -125,6 +126,24 @@
 % \end{tabular}
 %\end{table}
 %
+% \begin{table}[htb!]
+% \centering
+% \caption{\textsf{metsymb} commands for the C$_\text{L}$, C$_\text{M}$, and C$_\text{H}$ cloud symbols.}\label{tbl:clcmch}
+% \vspace{5pt}
+% \begin{tabular}{c l c l c l}
+% \clI & |\clI| &  \cmI & |\cmI| & \chI & |\chI| \\
+% \clII & |\clII| & \cmII & |\cmII| & \chII & |\chII| \\
+% \clIII & |\clIII| & \cmIII & |\cmIII| & \chIII & |\chIII| \\
+% \clIV & |\clIV| & \cmIV & |\cmIV| & \chIV & |\chIV| \\
+% \clV & |\clV| & \cmV & |\cmV| & \chV & |\chV| \\
+% \clVI & |\clVI| & \cmVI & |\cmVI| & \chVI & |\chVI| \\
+% \clVII & |\clVII| & \cmVII & |\cmVII| & \chVII & |\chVII| \\
+% \clVIII & |\clVIII| & \cmVIII & |\cmVIII| & \chVIII & |\chVIII| \\
+% \clIX & |\clIX| & \cmIX & |\cmIX| & \chIX & |\chIX|
+% \end{tabular}
+%\end{table}
+%
+% \newpage
 % \subsection{Using \textsf{metsymb} with \textsf{matplotlib}}
 %
 % \noindent \textsf{metsymb} can be used to include meteorological symbols inside Python plots, provided that the use of a system-wide \LaTeX\ installation is enabled via the setting \texttt{text.usetex} in your rcParams\footnote{\url{https://matplotlib.org/stable/tutorials/text/usetex.html}}. In fact, the assembly of a dedicated vectorial font to store the \textsf{metsymb} symbols\footnote{instead of a simpler TikZ approach, \href{https://tex.stackexchange.com/questions/610992/creating-new-symbols-with-full-font-metrics-and-vector-quality}{for example}} is directly motivated by the fact that \textsf{matplotlib} \href{https://stackoverflow.com/questions/68769147/tikzpicture-cropped-from-dvi-when-used-in-matplotlib-plt-text}{requires proper font metrics} to include symbols in Python plots.\\
@@ -319,6 +338,194 @@
 %    \end{macrocode}
 % \end{macro}
 %
+% \begin{macro}{\clI}
+% The C$_\text{L}=1$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\clI}{{\usefont{U}{metsymb}{m}{n} \char53 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\clII}
+% The C$_\text{L}=2$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\clII}{{\usefont{U}{metsymb}{m}{n} \char54 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\clIII}
+% The C$_\text{L}=3$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\clIII}{{\usefont{U}{metsymb}{m}{n} \char55 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\clIV}
+% The C$_\text{L}=4$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\clIV}{{\usefont{U}{metsymb}{m}{n} \char56 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\clV}
+% The C$_\text{L}=5$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\clV}{{\usefont{U}{metsymb}{m}{n} \char57 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\clVI}
+% The C$_\text{L}=6$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\clVI}{{\usefont{U}{metsymb}{m}{n} \char58 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\clVII}
+% The C$_\text{L}=7$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\clVII}{{\usefont{U}{metsymb}{m}{n} \char59 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\clVIII}
+% The C$_\text{L}=8$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\clVIII}{{\usefont{U}{metsymb}{m}{n} \char60 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\clIX}
+% The C$_\text{L}=9$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\clIX}{{\usefont{U}{metsymb}{m}{n} \char61 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\cmI}
+% The C$_\text{M}=1$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\cmI}{{\usefont{U}{metsymb}{m}{n} \char62 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\cmII}
+% The C$_\text{M}=2$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\cmII}{{\usefont{U}{metsymb}{m}{n} \char63 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\cmIII}
+% The C$_\text{M}=3$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\cmIII}{{\usefont{U}{metsymb}{m}{n} \char64 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\cmIV}
+% The C$_\text{M}=4$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\cmIV}{{\usefont{U}{metsymb}{m}{n} \char65 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\cmV}
+% The C$_\text{M}=5$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\cmV}{{\usefont{U}{metsymb}{m}{n} \char66 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\cmVI}
+% The C$_\text{M}=6$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\cmVI}{{\usefont{U}{metsymb}{m}{n} \char67 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\cmVII}
+% The C$_\text{M}=7$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\cmVII}{{\usefont{U}{metsymb}{m}{n} \char68 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\cmVIII}
+% The C$_\text{M}=8$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\cmVIII}{{\usefont{U}{metsymb}{m}{n} \char69 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\cmIX}
+% The C$_\text{M}=9$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\cmIX}{{\usefont{U}{metsymb}{m}{n} \char70 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\chI}
+% The C$_\text{H}=1$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\chI}{{\usefont{U}{metsymb}{m}{n} \char71 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\chII}
+% The C$_\text{H}=2$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\chII}{{\usefont{U}{metsymb}{m}{n} \char72 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\chIII}
+% The C$_\text{H}=3$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\chIII}{{\usefont{U}{metsymb}{m}{n} \char73 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\chIV}
+% The C$_\text{H}=4$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\chIV}{{\usefont{U}{metsymb}{m}{n} \char74 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\chV}
+% The C$_\text{H}=5$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\chV}{{\usefont{U}{metsymb}{m}{n} \char75 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\chVI}
+% The C$_\text{H}=6$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\chVI}{{\usefont{U}{metsymb}{m}{n} \char76 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\chVII}
+% The C$_\text{H}=7$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\chVII}{{\usefont{U}{metsymb}{m}{n} \char77 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\chVIII}
+% The C$_\text{H}=8$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\chVIII}{{\usefont{U}{metsymb}{m}{n} \char78 }}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\chIX}
+% The C$_\text{H}=9$ cloud symbol:
+%    \begin{macrocode}
+\newcommand{\chIX}{{\usefont{U}{metsymb}{m}{n} \char79 }}%
+%    \end{macrocode}
+% \end{macro}
 %
 % \Finale
 \endinput

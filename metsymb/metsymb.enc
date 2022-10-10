@@ -52,33 +52,33 @@
  /two
  /three
  /four
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef		% 0x40
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
- /.notdef
+ /five
+ /six
+ /seven
+ /eight
+ /nine
+ /colon
+ /semicolon
+ /less
+ /equal
+ /greater
+ /question
+ /at		% 0x40
+ /A
+ /B
+ /C
+ /D
+ /E
+ /F
+ /G
+ /H
+ /I
+ /J
+ /K
+ /L
+ /M
+ /N
+ /O
  /.notdef		% 0x50
  /.notdef
  /.notdef
