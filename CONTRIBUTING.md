@@ -4,6 +4,7 @@
 
 - [Code of conduct](#code-of-conduct)
 - [Scope](#essential-things-to-know-about-metsymb)
+- [Package content](#package-content)
 - [Contributing new symbols](#contributing-new-symbols)
 - [Updating the metsymb font (maintainers)](#updating-the-metsymb-font)
 - [Releasing new symbols (maintainers)](#releasing-new-symbols)
@@ -24,7 +25,31 @@ metsymb is meant to ease the access to vectorial definitions of meteorological s
    * used and recognized internationally, and
    * regularly employed in a professional context.
 
-Here is a non-exhaustive list of symbols that will never be included in metsymb: :cloud:, :zap:, :cyclone:, :snowflake:, ... :scream: !
+A [dedicated Github issue template](https://github.com/MeteoSwiss/metsymb/blob/develop_vof/.github/ISSUE_TEMPLATE/symbol_suggestion.md) was created to make sure [new symbol requests](https://github.com/MeteoSwiss/metsymb/issues?q=is%3Aissue+%5BSYMB%5D+) are properly motivated.
+
+
+## Package content
+
+What follows is a (brief) description of the more "exotic" files included in the metsymb repo:
+ - `.github/`: contains all the Github-related magic, including custom issue templates, custom
+   pull-request templates, and specific Actions for CI/CD purposes.
+
+ - `source/`: contains the actual metsymb TeX package files. These include:
+   * `manual_install.sh`: a crude, basic, absolutely-not-to-be-trusted bash script to automate the manual installation of the metsymb TeX package.
+   * `metsymb.sfd`: the FontForge save file, used to assign glyphs to characters of the metsymb font.
+   * `metsymb.afm`, `metsymb.enc`, `metsymb.pfb`, `metsymb.tfm`, and `metsymb.otf`: the different font files required by LaTeX, generated using FontForge.
+   * `umetsymb.fd`, `metsymb.map`, `metsymb.ins`, `metsymb.dtx`: the actual LaTeX package files.
+   * `metsymb_mwe.py`, and `metsymb_mwe.mplstyle`: demo files to illustrate the use of metsymb with `matpolotlib`. With metsymb successfully installed, running `metsymb_mwe.py` will generate
+   `metsymb_mwe.png` and `metsymb_mwe.pdf`.
+   * `metsymb.pdf`: the compiled documentation of the metsymb TeX package.
+   * `testfont.pdf`: the metsymb font table (see below).
+
+ - `tickz_glyphs/`: contains all the individual TikZ reference codes for the metsymb glyphs. Each
+   glyph is designed inside a dedited `.tex` file, which gets compiled in a matching `.pdf` file.
+   The latter is then converted manually (see below) to a matching `.svg` file, that is used to load
+   the symbol inside FontForge.
+
+ - `.gitattributes`: fine-tunes which files get included in the Github releases' `.zip`, to ensure these are CTAN-ready.
 
 
 ## Contributing new symbols
@@ -72,7 +97,7 @@ When a new set of symbols has been assembled, the package maintainers will need 
     1.2. Cleanup the glyph via `Element -> Overlap -> Remove Overlap` (after selecting all nodes).
         :warning: If certain elements are "white", their order must first be reversed via `Element -> Reverse Order`.
 
-    1.3. Check the glyph validity via `Elements -> Find Problems ...`. Make sure to tick the box `Paths -> Check missing extrema`.
+    1.3. Check the glyph validity via `Elements -> Find Problems ...`. Make sure to tick the box `Paths -> Intersecting paths & Check missing extrema`.
 
     1.4. Repeat steps 1.1 to 1.3 for each new/updated glyph.
 
@@ -119,7 +144,7 @@ When a new set of symbols has been assembled, the package maintainers will need 
     ```
     pdftex testfont
     ```
-    When prompted for the font name, type metsymb, then request a `\sample`, and `\bye`.
+    When prompted for the font name, type `metsymb`, then request a `\sample`, and `\bye`.
 
 9. Run the Python example via `python metsymb_mwe.py`.
 
