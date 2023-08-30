@@ -2,6 +2,6 @@ contact_links:
   - name: Questions
     url: https://github.com/MeteoSwiss/metsymb/discussions/categories/q-a
     about: To ask a general question about metsymb.
-  - name: Symbol suggestions
+  - name: Symbol suggestion
     url: https://github.com/MeteoSwiss/metsymb/discussions/categories/symbol-suggestions
     about: To suggest a new symbol that should be included in metsymb.

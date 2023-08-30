@@ -1,14 +1,14 @@
 name: Symbol specification
 description: Provide detailed specifications for a new symbol to be included in metsymb
 title: "[SYMB]: "
-labels: ["Symbol specs"]
+labels: ["new symbol"]
 body:
   - type: checkboxes
     id: approved
     attributes:
-      label: Did the matsymb maintainer(s) already agree to add this new symbol to metsymb ?
+      label: Did the metsymb maintainer(s) explicitely agree to add this new symbol to metsymb ?
       description: |
-        This form is to keep track of **dev-approved** symbols to be added to metsymb.
+        This form is to keep track of **approved** symbols to be added to metsymb.
 
         To **suggest** a new symbol instead, head over to the [dedicated Discussion area](https://github.com/MeteoSwiss/metsymb/discussions/categories/symbol-suggestions).
       options:
