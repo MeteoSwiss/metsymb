@@ -1,5 +1,5 @@
 .gitignore         export-ignore
 .gitattributes     export-ignore
 .github            export-ignore
-tickz_glyphs       export-ignore
+tikz_glyphs        export-ignore
 manual_install.sh  export-ignore
