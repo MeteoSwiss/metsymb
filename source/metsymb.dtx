@@ -1,6 +1,6 @@
 % \iffalse meta-comment
 %
-% Copyright (C) 2021-2022 MeteoSwiss, originally written by Frédéric P.A. Vogt
+% Copyright (C) 2021-2023 MeteoSwiss, originally written by Frédéric P.A. Vogt
 %
 % This file may be distributed and/or modified under the
 % conditions of the BSD-3-Clause License.
@@ -90,12 +90,13 @@
 %
 % \tableofcontents
 %
-% \section{Introduction}
+% \section{Why \textsf{metsymb} ?}
 %
 % The creation of this package was motivated by the fact that in 2021, there were no dedicated Unicode elements for \href{https://en.wikipedia.org/wiki/Okta}{okta} and \href{https://cloudatlas.wmo.int/en/abbr-and-symbols-of-clouds-table-genera-species.html}{cloud genera} symbols. To the best of my knowledge, no \LaTeX\ package provides a uniform set of these symbols either\footnote{If you know of one, please let me know and I shall list it here !}.\\
 %
-% \noindent This package is a direct attempt to remedy to this unfortunate state of affair. Individual symbols are designed using TikZ\footnote{\url{https://www.ctan.org/pkg/pgf}}. They are then bundled into a dedicated font with FontForge\footnote{\url{https://fontforge.org/en-US/}}. Individual glyphs of this metsymb font are then tied to dedicted \LaTeX\ commands via this package.
-% \newpage
+% \noindent This package is a direct attempt to remedy to this unfortunate state of affair. Individual symbols are designed using TikZ\footnote{\url{https://www.ctan.org/pkg/pgf}}. They are then bundled into a dedicated font with FontForge\footnote{\url{https://fontforge.org/en-US/}}. Individual glyphs of this metsymb font are then tied to dedicted \LaTeX\ commands via this package.\\
+%
+% \noindent One key element of the metsymb symbols is that they are \textbf{designed using explicit (mathematical) TikZ commands}. This evidently helps to maintain a uniform look between the symbols, but also --and perhaps more importantly-- it ensures that each symbol can be faithfully reproduced with different software in the future (should the need arise).
 % \section{Usage}
 %
 % Using the \textsf{metsymb} package is straightforward. By importing it via a not-so-surprising \texttt{\textbackslash usepackage\{metsymb\}} in the preamble of your documents, you will gain access to the commands listed in Tables~\ref{tbl:oktas} to \ref{tbl:clcmch}.
@@ -166,7 +167,7 @@
 % The \textsf{metsymb} package is being developed inside a dedicated Github repository under the MeteoSwiss organization, located at: \url{https://github.com/MeteoSwiss/metsymb}. User contributions are welcome and will be examined in details. So are bug reports and suggestions for new symbols, which are best submitted as \textit{Github Issues} directly on the code's repo at: \url{https://github.com/MeteoSwiss/metsymb/issues}
 %
 % \section{License and copyright}
-% The copyright (2021-2022) of \textsf{metsymb} is owned by MeteoSwiss. The code, originally written by Frédéric P.A. Vogt, is released under the terms of the BSD-3-Clause License, available at \url{https://opensource.org/licenses/BSD-3-Clause}.
+% The copyright (2021-2023) of \textsf{metsymb} is owned by MeteoSwiss. The code, originally written by Frédéric P.A. Vogt, is released under the terms of the BSD-3-Clause License, available at \url{https://opensource.org/licenses/BSD-3-Clause}.
 %
 % \section{Ackowledgments}
 % The following resources proved immensely useful to assemble the first version of this package:
@@ -181,7 +182,7 @@
 % \item those that provided clarifications and help \href{https://tex.stackexchange.com/questions/610992}{in this post}, \href{https://stackoverflow.com/questions/68769147}{in that post}, and \href{https://tex.stackexchange.com/questions/611746}{in that other post}.
 % \end{itemize}
 %
-% \noindent Thank you also to the jklymak and anntzer.lee from the \textsf{matplotlib} discourse community for their clarifications in \href{https://discourse.matplotlib.org/t/tikzpicture-cropped-from-dvi-before-ingestion-in-figure-via-plt-text/22249}{this post}.
+% \noindent Thank you also to jklymak and anntzer.lee from the \textsf{matplotlib} discourse community for their clarifications in \href{https://discourse.matplotlib.org/t/tikzpicture-cropped-from-dvi-before-ingestion-in-figure-via-plt-text/22249}{this post}.
 %
 % \section{Font table}
 %

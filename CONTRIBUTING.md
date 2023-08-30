@@ -163,7 +163,7 @@ Here are the steps to follow, should a new release be warranted:
 
 1. If warranted, update the copyright years in the following files:
 
-        README, LICENSE, metsymb.ins, metsymb.dts, and metsymb.sfd (via FontForge)
+        README, LICENSE, metsymb.ins, metsymb.dtx, and metsymb.sfd (via FontForge)
 
    :warning: Mind the multiple copyright entries in some of these files !
 
