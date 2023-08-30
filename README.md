@@ -4,7 +4,7 @@ metsymb is a **LaTeX package** that introduces vectorial definitions of professi
 
 This README contains information about the metsymb source code and repository.
 
-For the description of the metsymb LateX package, see [this file](https://github.com/MeteoSwiss/metsymb/blob/develop/metsymb/metsymb.pdf).
+**For the description of the metsymb LaTeX package, see [this file](source/metsymb.pdf).**
 
 
 ## Table of contents
@@ -20,7 +20,7 @@ For the description of the metsymb LateX package, see [this file](https://github
 
 The metsymb package is released under the terms of the BSD-3-Clause license. The terms of this license are available at https://opensource.org/licenses/BSD-3-Clause, and in the LICENSE file included in the package.
 
-The copyright (C) 2021-2022 of metsymb is owned by MeteoSwiss. The contributors to the code are listed in AUTHORS.
+The copyright (C) 2021-2023 of metsymb is owned by MeteoSwiss. The contributors to the code are listed in AUTHORS.
 
 
 ## Installation
