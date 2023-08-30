@@ -31,7 +31,7 @@ body:
       label: (Proposed) LaTeX name
       description: Provide a suggestion for the LaTeX handle
       placeholder: Name
-      value: "`\awesomename`"
+      value: '`\awesomename`'
     validations:
       required: true
   - type: textarea
