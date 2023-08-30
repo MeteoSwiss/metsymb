@@ -1,5 +1,7 @@
 # metsymb
 
+[![DOI](https://zenodo.org/badge/395373932.svg)](https://zenodo.org/badge/latestdoi/395373932)
+
 metsymb is a **LaTeX package** that introduces vectorial definitions of professional meteorological symbols. Individual symbols are first designed using [TikZ](https://www.ctan.org/pkg/pgf). They are then bundled into a dedicated font with [FontForge](https://fontforge.org/en-US/), and eventually tied to dedicted LaTeX commands. The metsymb **OpenType font** is a side-product that can be used on its own.
 
 This README contains information about the metsymb source code and repository.
