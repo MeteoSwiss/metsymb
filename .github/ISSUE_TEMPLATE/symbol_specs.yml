@@ -44,7 +44,7 @@ body:
       value: "Circle of 10pt in diameter, angle of 42.0 deg between straight lines, ..."
     validations:
       required: true
- - type: textarea
+  - type: textarea
     id: references
     attributes:
       label: Official definition and references
