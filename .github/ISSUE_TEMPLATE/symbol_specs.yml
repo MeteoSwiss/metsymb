@@ -13,8 +13,7 @@ body:
         To **suggest** a new symbol instead, head over to the [dedicated Discussion area](https://github.com/MeteoSwiss/metsymb/discussions/categories/symbol-suggestions).
       options:
         - label: Yes, the metsymb maintainer(s) agreed.
-    validations:
-      required: true
+          required: true
   - type: dropdown
     id: set
     attributes:
@@ -32,7 +31,7 @@ body:
       label: (Proposed) LaTeX name
       description: Provide a suggestion for the LaTeX handle
       placeholder: Name
-      value: "\awesomename"
+      value: "`\awesomename`"
     validations:
       required: true
   - type: textarea
