@@ -14,7 +14,7 @@ on:
 
 env:
   # Define the CTAN ZIP file name only once ...
-  CTAN_FNAME: metsymb_${{ github.ref_name }}_CTAN.zip
+  CTAN_FNAME: metsymb-${{ github.ref_name }}-ctan.zip
 
 jobs:
   ctan:

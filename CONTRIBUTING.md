@@ -179,4 +179,4 @@ Here are the steps to follow, should a new release be warranted:
 
 6. Once all has been reviewed and merged, create a new release on Github.
 
-7. Upload the release's `.zip` onto CTAN.
+7. Upload the release's `metsymb-vX.Y.Z-ctan.zip` file onto CTAN. This file is being created by a dedicated Action, to make sure it is compliant with the CTAN upload requirements.
