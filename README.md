@@ -1,10 +1,12 @@
 # metsymb
 
-metsymb is a **LaTeX package** that introduces vectorial definitions of professional meteorological symbols. Individual symbols are first designed using [TikZ](https://www.ctan.org/pkg/pgf). They are then bundled into a dedicated font with [FontForge](https://fontforge.org/en-US/), and eventually tied to dedicted LaTeX commands. The metsymb **OpenType font** is a side-product that can be used on its own.
+[![DOI](https://zenodo.org/badge/395373932.svg)](https://zenodo.org/badge/latestdoi/395373932)
 
-This README contains information about the metsymb source code and repository.
+metsymb is a **LaTeX package** that introduces vectorial definitions of official meteorological symbols. Individual symbols are first designed using [TikZ](https://www.ctan.org/pkg/pgf). They are then bundled into a dedicated font with [FontForge](https://fontforge.org/en-US/), and eventually tied to dedicted LaTeX commands. The metsymb **OpenType font** is a side-product that can be used on its own.
 
-**For the description of the metsymb LaTeX package, see [this file](source/metsymb.pdf).**
+This README contains information about the metsymb source code and [repository](https://github.com/MeteoSwiss/metsymb).
+
+**For the description of the metsymb LaTeX package, see [this file](https://github.com/MeteoSwiss/metsymb/blob/develop/source/metsymb.pdf).**
 
 
 ## Table of contents
@@ -32,9 +34,9 @@ Depending on your needs, you may want to install metsymb:
 
 ### Install metsymb as a LaTeX package
 Since metsymb includes a new font, its manual installation is a bit hairier (:scream:) than regular packages. **It is thus strongly recommended to use your favorite TeX package
-manager to install metsymb, given that it lives on CTAN**.
+manager to install metsymb, given that it lives on [CTAN](https://ctan.org/pkg/metsymb)**.
 
-Should you be willing/requireds to install the package manually nonetheless, here are some guidelines:
+Should you be willing/required to install the package manually nonetheless, here are some guidelines:
 
   1. Download the latest metsymb [release](https://github.com/MeteoSwiss/metsymb/releases).
      If you are interested in the latest changes, you can also clone the [metsymb Github repo](https://github.com/MeteoSwiss/metsymb) directly.
@@ -85,7 +87,7 @@ If these two commands work, you have successfully installed the metsymb package 
 
 ### Installing metsymb as an OpenType font
 
-Deploy the [`metsymb.otf`](https://github.com/MeteoSwiss/metsymb/blob/develop/metsymb/metsymb.otf) file on your system like you would any other OpenType font, and you should
+Deploy the [`metsymb.otf`](https://github.com/MeteoSwiss/metsymb/blob/develop/source/metsymb.otf) file on your system like you would any other OpenType font, and you should
 have access to its symbols in your favorite text editor.
 
 
@@ -97,7 +99,8 @@ If you encounter any issue when installing or using metsymb, you can check if it
 ## Suggesting new symbols
 
 If your favorite meteorological symbol is not yet included in metsymb,
-you can suggest its inclusion by creating a new [Github Issue](https://github.com/MeteoSwiss/metsymb/).
+you can suggest its inclusion by creating a new [Discussion on Github](https://github.com/MeteoSwiss/metsymb/discussions/categories/symbol-suggestions).
+
 
 ## Contributing
 

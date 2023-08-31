@@ -1,0 +1,62 @@
+name: Symbol specification
+description: Provide detailed specifications for a new symbol to be included in metsymb
+title: "[SYMB]: "
+labels: ["new symbol"]
+body:
+  - type: checkboxes
+    id: approved
+    attributes:
+      label: Did the metsymb maintainer(s) explicitely agree to add this new symbol to metsymb ?
+      description: |
+        This form is to keep track of **approved** symbols to be added to metsymb.
+
+        To **suggest** a new symbol instead, head over to the [dedicated Discussion area](https://github.com/MeteoSwiss/metsymb/discussions/categories/symbol-suggestions).
+      options:
+        - label: Yes, the metsymb maintainer(s) agreed.
+          required: true
+  - type: dropdown
+    id: set
+    attributes:
+      label: Is the symbol part of a set ?
+      description: For symbols that are part of a set, the entire set should be ingested in metsymb.
+      options:
+        - No.
+        - Yes, and a dedicated request will be issued for each symbol.
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: name
+    attributes:
+      label: (Proposed) LaTeX name
+      description: Provide a suggestion for the LaTeX handle
+      placeholder: Name
+      value: '`\awesomename`'
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the symbol
+      description: Provide a clear and concise description of what the symbol is. If applicable, include explicit design specifications.
+      placeholder: Description
+      value: "Circle of 10pt in diameter, angle of 42.0 deg between straight lines, ..."
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: Official definition and references
+      description: Provide links to the official definition of the symbol and reference images.
+      placeholder: References
+      value: "See ... and ... . The symbol is used here ... and there ... . "
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this ticket, you agree to follow our [Code of Conduct](https://github.com/MeteoSwiss/metsymb/blob/develop/CODE_OF_CONDUCT.md).
+      options:
+        - label: I agree to follow the metsymb Code of Conduct.
+          required: true

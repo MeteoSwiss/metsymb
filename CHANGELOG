@@ -4,16 +4,21 @@ The format is inspired from [Keep a Changelog](https://keepachangelog.com/en/1.0
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [vX.Y.Z]
+### Added:
+ - [fpavogt, 2023-08-31] New CI Action to create CTAN-compatible ZIPs upon release.
+### Fixed:
+### Changed:
+### Deprecated:
+### Removed:
+### Security:
+
 ## [v1.2.0]
 ### Added:
  - [fpavogt, 2022-10-07] Added first design of Cl, Cm, Ch cloud symbols.
  - [fpavogt, 2022-10-07] Prepare the CTAN release (+ .gitattributes, doc cleanup)
-### Fixed:
 ### Changed:
  - [fpavogt, 2022-10-10] Small modifications of the cloud genera symbols to match the cl-cm-ch design (radius, slope).
-### Deprecated:
-### Removed:
-### Security:
 
 ## [v1.1.0]
 ### Added:
