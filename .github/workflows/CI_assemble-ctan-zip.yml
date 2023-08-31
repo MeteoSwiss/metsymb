@@ -39,6 +39,6 @@ jobs:
     - name: Upload the CTAN ZIP file to the release as an asset
       # This uses the Github CLI, following a suggestion in
       # https://stackoverflow.com/questions/75274866
-      run: gh release upload ${{ github.ref }} ${{ env.CTAN_FNAME }} --clobber
+      run: gh release upload ${{ github.ref_name }} ${{ env.CTAN_FNAME }} --clobber
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
