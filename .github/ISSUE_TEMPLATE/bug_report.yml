@@ -9,8 +9,7 @@ body:
       description: Look at the [open](https://github.com/MeteoSwiss/metsymb/issues) and [closed](https://github.com/MeteoSwiss/metsymb/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aclosed+) issues.
       options:
         - label: I found no existing ticket for this bug.
-    validations:
-      required: true
+          required: true
   - type: textarea
     id: description
     attributes:
