@@ -1,0 +1,44 @@
+# This workflow will trigger when a new release is published (or edited).
+# It will create a CTAN-compatible ZIP of the repo, and add it to the release.
+# The core problem with the ZIP created directly by Github is that the top folder is called
+# metsymb_vX.Y.Z/, whereas CTAN requires metsymb/
+#
+#
+# Copyright (c) 2023 fpavogt; frederic.vogt@meteoswiss.ch
+
+name: CI_ctan
+
+on:
+  release:
+    types: [published, edited]
+
+env:
+  # Define the CTAN ZIP file name only once ...
+  CTAN_FNAME: metsymb_${{ github.ref_name }}_CTAN.zip
+
+jobs:
+  ctan:
+
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout current repository
+      # By default, only the branch/tag that triggered the action is being checked out.
+      # Which is perfectly fine in the present case.
+      uses: actions/checkout@v3
+
+    - name: Compress the repo in a CTAN-compatible way
+      # Things we are doing to achieve it:
+      # 1. ensure the top-level directory inside the ZIP is called "metsymb/"
+      run: git archive --format zip --prefix metsymb/ ${{ github.ref_name }} -o ${{ env.CTAN_FNAME }}
+
+    - name: Check that the ZIP file looks good
+      # This is for visual debug only ...
+      run: zipinfo ${{ env.CTAN_FNAME }}
+
+    - name: Upload the CTAN ZIP file to the release as an asset
+      # This uses the Github CLI, following a suggestion in
+      # https://stackoverflow.com/questions/75274866
+      run: gh release upload $GITHUB_REF ${{ env.CTAN_FNAME }} --clobber
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
