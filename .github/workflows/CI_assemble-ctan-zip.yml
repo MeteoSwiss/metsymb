@@ -10,7 +10,9 @@ name: CI_ctan
 
 on:
   release:
-    types: [published, edited]
+    types:
+      - published
+      - edited
 
 env:
   # Define the CTAN ZIP file name only once ...
